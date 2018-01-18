@@ -73,7 +73,6 @@
     <integer name="fab_duration">100</integer>
     <dimen name="fab_elevation">5dp</dimen>
     <dimen name="fab_rise">3dp</dimen>
-
     <string name="data">{"address": \"yo test\"}</string>
 
 </resources>
