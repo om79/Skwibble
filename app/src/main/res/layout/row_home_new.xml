@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto"
+    android:layout_height="90dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="3dp"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:gravity="center|left"
+            android:weightSum="1"
+
+            android:layout_height="35dp">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_weight=".45"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center|bottom"
+                android:background="@drawable/edit_child_back"
+                android:layout_height="match_parent">
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="textPersonName"
+                    android:hint="Sibling Name"
+                    android:paddingTop="8dp"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="8dp"
+                    android:background="@android:color/transparent"
+                    android:gravity="center|left"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/border_color"
+                    android:ems="10"
+                    android:textSize="12dp"
+
+                    android:singleLine="true"
+
+
+                    android:id="@+id/editchildame"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_weight=".45"
+                android:gravity="center"
+                android:id="@+id/textView6_relation"
+                android:background="@drawable/edit_child_back"
+                android:layout_height="match_parent">
+
+
+
+                <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                    android:text="Brother"
+                    android:gravity="center|left"
+                    ripple:compoundDrawableHeight="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textVrelation"
+                    android:paddingLeft="20dp"
+                    android:textSize="12dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:drawableRight="@mipmap/drop_down"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/black"
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight=".1"
+                android:gravity="center"
+                android:id="@+id/imageView11"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:src="@mipmap/orange_cross"
+
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="35dp"
+            android:gravity="center"
+            android:id="@+id/textiiate"
+            android:background="@drawable/edit_child_back"
+            android:layout_height="35dp">
+
+            <TextView
+                android:text="Sibling Date Of Birth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/textdfate"
+                android:textColor="@color/border_color"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/calender"
+                android:layout_marginRight="10dp"
+                android:id="@+id/imageView7"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

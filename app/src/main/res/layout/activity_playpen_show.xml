@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_playpen_show"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.skwibble.skwibblebook.playpen_group.Playpen_show">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:background="@color/Medium"
+            android:gravity="center"
+            android:weightSum="1"
+            android:layout_height="50dp">
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_weight=".15"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"></LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+
+                android:gravity="center"
+                android:layout_weight=".7"
+                android:layout_height="match_parent">
+
+
+
+                <TextView
+                    android:text="Playpens"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:maxLength="20"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tesssxtView7"
+                    />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:orientation="horizontal"
+                style="@style/SelectableItemBackground"
+                android:layout_width="0dp"
+                android:layout_weight=".15"
+                android:gravity="center"
+                android:id="@+id/invideiew10"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:visibility="visible"
+                    android:src="@mipmap/playpen_create"
+                    android:id="@+id/inviteimageView10"
+                    />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/playpen_swipe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <ListView
+            android:layout_width="match_parent"
+            android:id="@+id/playpen_list"
+            android:visibility="visible"
+            android:divider="@android:color/transparent"
+            android:layout_height="match_parent" />
+        </android.support.v4.widget.SwipeRefreshLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:id="@+id/not_found_layout"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:src="@mipmap/playpen_not_found"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:id="@+id/not_ghgffound_txt"
+                android:textColor="@color/black"
+                android:text="@string/not_found_playpen"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="125dp"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/not_btn_layout"
+                    android:background="@drawable/orange_roundes_btn"
+                    android:layout_height="25dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Create Playpen"
+                        android:id="@+id/not_found_txt"
+                        android:textColor="@color/orange"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

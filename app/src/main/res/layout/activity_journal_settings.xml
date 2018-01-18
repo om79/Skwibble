@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_user_setting"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context="com.skwibble.skwibblebook.user_group.User_setting">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:background="@color/Medium"
+        android:gravity="center"
+        android:weightSum="1"
+
+        android:layout_height="50dp">
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_weight=".15"
+            android:gravity="center"
+            style="@style/SelectableItemBackground"
+            android:id="@+id/imakkl8_fffback"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="17dp"
+                android:src="@mipmap/back"
+
+                android:layout_weight="1" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_weight=".7"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="Journal Settings"
+                android:gravity="center"
+                android:textSize="14dp"
+
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textVdiew7"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:visibility="invisible"
+            android:id="@+id/imageView_edit"
+            android:layout_weight=".15"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/edit_icon"
+
+                android:layout_weight="1" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            style="@style/SelectableItemBackground"
+            android:id="@+id/profile_layout"
+            android:background="@drawable/edit_text_underline"
+            android:layout_height="60dp">
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:gravity="center|left"
+                android:layout_height="match_parent">
+
+                <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                    android:text="Notifications"
+                    android:layout_width="match_parent"
+                    android:drawableLeft="@mipmap/bell_icon"
+
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:drawablePadding="20dp"
+                    android:gravity="center|left"
+                    ripple:compoundDrawableHeight="20dp"
+                    ripple:compoundDrawableWidth="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="13dp"
+                    android:id="@+id/textView6"
+                    android:layout_weight="1" />
+
+                <android.support.v7.widget.SwitchCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:checked="true"
+                    android:id="@+id/Switch"
+                    android:theme="@style/MySwitch"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:id="@+id/profisssle_layout"
+        style="@style/SelectableItemBackground"
+        android:background="@drawable/edit_text_underline"
+        android:layout_height="60dp">
+
+        <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+
+            android:gravity="center|left"
+            android:id="@+id/settzzyout"
+            android:weightSum="1"
+            android:layout_height="60dp">
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:orientation="horizontal"
+                android:gravity="center|left"
+                android:layout_weight=".87"
+                android:layout_height="match_parent">
+                <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tefgxtView2"
+                    android:layout_marginLeft="20dp"
+                    android:drawablePadding="20dp"
+                    android:gravity="center|left"
+
+                    android:drawableLeft="@mipmap/clock_icon"
+                    android:textColor="@color/black"
+                    android:textSize="13dp"
+                    android:layout_marginRight="30dp"
+                    ripple:compoundDrawableHeight="20dp"
+                    ripple:compoundDrawableWidth="20dp"
+
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight=".13"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="10dp"
+                    android:src="@mipmap/drop_down"
+
+
+                    />
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+        </RelativeLayout>
+
+
+
+
+</LinearLayout>

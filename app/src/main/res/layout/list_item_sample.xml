@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/background_card"
+        android:id="@+id/other_layout_head"
+        android:gravity="top"
+        android:weightSum="1"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+
+            android:id="@+id/click_layout"
+            android:gravity="top"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="20dp"
+            android:layout_height="wrap_content">
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/clickrrr_layout"
+                android:layout_width="match_parent"
+                android:gravity="center"
+
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="right"
+                    android:visibility="gone"
+                    android:id="@+id/hide_dummy"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+
+
+                        android:src="@mipmap/cross_orange"/>
+                </LinearLayout>
+
+
+                <com.etsy.android.grid.util.DynamicHeightImageView
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/story_placeholer"
+                    android:gravity="center"
+                    />
+                <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                    android:text=" 0"
+                    android:gravity="center_vertical"
+                    android:drawablePadding="2dp"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:textSize="10dp"
+                    android:layout_marginRight="14dp"
+                    android:layout_marginTop="12dp"
+                    ripple:compoundDrawableHeight="10dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/list_media_count"
+                    android:drawableRight="@mipmap/media_icon"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_above="@+id/bot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="4dp"
+                android:paddingTop="4dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:maxLines="4"
+                android:textColor="@color/black"
+                android:gravity="center|left"
+                android:textSize="12dp"/>
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:weightSum="1"
+            android:gravity="center|left"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/bot"
+            android:layout_height="30dp"
+
+            >
+
+            <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                android:text="  30th Oct"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:textSize="8dp"
+                android:layout_marginRight="10dp"
+                android:drawablePadding="5dp"
+                android:singleLine="true"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/strory_date"
+                ripple:compoundDrawableHeight="10dp"
+                android:id="@+id/textView2date2"
+                />
+
+            <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                android:text="  0"
+                android:gravity="center|left"
+                android:drawablePadding="5dp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:textSize="8dp"
+                android:layout_marginRight="10dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textVilikesew21"
+                android:drawableLeft="@mipmap/not_like"
+                ripple:compoundDrawableHeight="10dp"
+                />
+
+            <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                android:text="  0"
+                android:gravity="center|left"
+                android:drawablePadding="5dp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                ripple:compoundDrawableHeight="10dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textVicmntew9"
+                android:textSize="8dp"
+                android:drawableLeft="@mipmap/cmnt"
+                />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+</RelativeLayout>

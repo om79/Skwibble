@@ -1,19 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	
-	
-	
-	<color name="tabMedium">#2B2B2B</color>
-	<color name="tabDark">#000000</color>
+
+
+	<color name="colorPrimary">#9E88C2</color>
+	<color name="noti_back">#E0E0E0</color>
+	<color name="colorPrimaryDark">#9E88C2</color>
+	<color name="colorAccent">#9E88C2</color>
+	<color name="medium_trans">#809E88C2</color>
+    <color name="light_grey">#f9f9f9</color>
+	<color name="Medium">#9E88C2</color>
+	<color name="Dark">#7b5fa7</color>
+	<color name="orange">#FA700D</color>
 	<color name="tabTransparent">#10ffffff</color>
-
-
-	<color name="theme_color_primary">#1c9359</color>
-	<color name="theme_color_primary_light">#3aaf75</color>
-	<color name="theme_color_accent">#084e43</color>
-
-
+	<color name="transparent">#00ffffff</color>
+	<color name="white">#ffffff</color>
+	<color name="loader_back">#50ffffff</color>
+	<color name="login_top">#CECAC9</color>
+	<color name="black">#4a4a4a</color>
+	<color name="dumy_back">#4DE35087</color>
+	<color name="dark_black">#111111</color>
+	<color name="theme_color_primary">#9E88C2</color>
+	<color name="theme_color_primary_light">#9E88C2</color>
+	<color name="theme_color_accent">#9E88C2</color>
+	<color name="fb_border">#E9434C</color>
+	<color name="border_color">#BF979797</color>
 	<color name="tab_border">#a7a7aa</color>
 	<color name="tab_background">#f6f6f7</color>
-	
+	<color name="fb_btn">#4B6EA8 </color>
+  	<color name="dim_back">#33ffffff</color>
+	<color name="black_dim_back">#80444444</color>
+	<color name="grey">#F2E9EB</color>
+	<color name="green">#A1F9C1</color>
+	<color name="blue">#ff82e0ff</color>
+	<color name="yellow">#fffffbae</color>
+	<color name="red">#fff10800</color>
+	<color name="grey_text">#9B9B9B</color>
+	<color name="purple">#B9C6E9</color>
+	<color name="purple_txt">#8569B3</color>
+	<color name="playpen_back">#F3F6FC</color>
+	<color name="trans">#50FFFFFF</color>
+	<color name="float_transparent">#00000000</color>
+	<color name="sweet_dialog_bg_color">#FFFFFF</color>
+	<color name="button_text_color">#FFFFFF</color>
+	<color name="gray_btn_bg_color">#D0D0D0</color>
+	<color name="gray_btn_bg_pressed_color">#B6B6B6</color>
+	<color name="blue_btn_bg_color">#AEDEF4</color>
+	<color name="blue_btn_bg_pressed_color">#96BFD2</color>
+	<color name="red_btn_bg_color">#DD6B55</color>
+	<color name="red_btn_bg_pressed_color">#CD5B55</color>
+	<color name="error_stroke_color">#F27474</color>
+	<color name="success_stroke_color">#A5DC86</color>
+	<color name="trans_success_stroke_color">#33A5DC86</color>
+	<color name="warning_stroke_color">#F8BB86</color>
+	<color name="text_color">#575757</color>
+	<color name="material_blue_grey_80">#ff37474f</color>
+	<color name="material_blue_grey_90">#ff263238</color>
+	<color name="material_blue_grey_95">#ff21272b</color>
+	<color name="material_deep_teal_20">#ff80cbc4</color>
+	<color name="material_deep_teal_50">#ff009688</color>
+	<color name="transparentGray">#99000000</color>
+	<color name="dDVTransparentGray">#99000000</color>
+	<color name="dDVColorPrimary">@color/colorPrimary</color>
+
+	<color name="background_video_color">#2f3031</color>
+	<color name="background_progress_color">#6C6D6D</color>
+	<color name="progress_color">@color/colorPrimary</color>
+	<color name="line_color">#0DC143</color>
+	<color name="shadow_color">#FF000000</color>
+	<color name="line_button">#565758</color>
+	<color name="black_translucent">#50000000</color>
+	<color name="custom_progress_purple_progress_half">#809E88C2</color>
+
+
 </resources>

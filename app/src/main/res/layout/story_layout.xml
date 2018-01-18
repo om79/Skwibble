@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/grey" >
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentStart="true">
+    <LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:background="@color/Medium"
+    android:gravity="center"
+    android:weightSum="1"
+    android:layout_height="50dp">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_weight=".15"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:background="?selectableItemBackground"
+            android:layout_width="0dp"
+            android:layout_weight=".15"
+            android:gravity="center"
+            android:visibility="invisible"
+            android:id="@+id/invidfxaView10"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:visibility="visible"
+                android:src="@mipmap/new_profile_icon"
+
+                android:id="@+id/inzeView10"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/switch_child"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight=".7"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/user_imageview"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            ripple:placeholderImage="@mipmap/child_pic"
+            ripple:failureImage="@mipmap/child_pic"
+            android:visibility="invisible"
+            ripple:roundAsCircle="true"
+             />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:maxLength="20"
+
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            />
+
+        <ImageView
+            android:id="@+id/xxx"
+            android:layout_width="14dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="2dp"
+            android:visibility="invisible"
+            android:src="@mipmap/white_drop_down" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="0dp"
+        android:layout_weight=".15"
+        android:gravity="center"
+        style="@style/SelectableItemBackground"
+        android:id="@+id/invidfsdfdeteimageView10"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+
+            android:visibility="visible"
+            android:src="@mipmap/group_icon"
+            android:id="@+id/inviteimageView10"
+             />
+    </RelativeLayout>
+
+
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:id="@+id/layout_add_post"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/story_add_post"
+            android:layout_height="wrap_content">
+
+            <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:visibility="visible"
+                android:hint="What did I do today?"
+                android:background="@android:color/transparent"
+                android:textColorHint="@color/border_color"
+                android:drawableRight="@mipmap/camera_icon"
+                ripple:compoundDrawableHeight="15dp"
+                android:ems="10"
+                android:id="@+id/editText2qpwoei"
+                android:textColor="@color/border_color"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="12dp"
+                android:layout_weight="1"
+                />
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/progress_layer"
+                android:gravity="center"
+                android:visibility="gone"
+                android:orientation="vertical" >
+
+                <com.akexorcist.roundcornerprogressbar.IconRoundCornerProgressBar
+                    android:id="@+id/progress_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:background="@color/white"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="10dp"
+                    ripple:rcIconSize="18dp"
+                    ripple:rcMax="100"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/border_color"
+                        android:id="@+id/post_count"
+                        android:textSize="12dp"
+                        android:text="Post uploading..."/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:gravity="end"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:textColor="@color/border_color"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/post_percentage"
+                            android:textSize="12dp"
+                            android:text="100%"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/main_swipe"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content">
+
+        <com.etsy.android.grid.StaggeredGridView
+            android:id="@+id/grid_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            android:saveEnabled="true"
+            ripple:item_margin="8dp"
+            ripple:column_count="@integer/grid_column_count"/>
+
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:id="@+id/not_found_xxxlayout"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:src="@mipmap/post_not_found"
+                android:id="@+id/xxxx"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:id="@+id/not_ghgffxsound_txt"
+                android:textColor="@color/black"
+                android:text="@string/post_not_found_add_post"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="125dp"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/not_btnxxx_layout"
+                    android:background="@drawable/orange_roundes_btn"
+                    android:layout_height="25dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add Child"
+                        android:id="@+id/not_fouxxxnd_txt"
+                        android:textColor="@color/orange"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:id="@+id/not_found_xxxladddddyout"
+            android:layout_height="match_parent"
+            android:weightSum="1">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight=".47">
+                <LinearLayout
+                    android:id="@+id/email_lssogin_form"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+
+                    android:layout_gravity="top"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/feed_not_found"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:id="@+id/not_found_txt_first"
+                        android:textSize="14dp"
+                        android:text="@string/buddies_post_not_found"/>
+
+                    <Button
+                        android:text="Enter Code"
+                        android:textSize="14dp"
+                        android:layout_width="120dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:id="@+id/not_enter_code"
+                        android:textAllCaps="false"
+                        android:textColor="@color/orange"
+                        android:background="@drawable/orange_border_btn"
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_gravity="top"
+                android:layout_weight=".06">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height=".5dp"
+                    android:background="@color/border_color"
+                    android:gravity="center"
+                   >
+
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:gravity="top"
+
+
+                android:layout_weight=".47">
+
+                <LinearLayout
+                    android:id="@+id/email_login_form"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/feed_app_icon"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:id="@+id/not_found_txt_sec"
+                        android:textSize="14dp"
+                        android:textColor="@color/black"
+                        android:text="@string/feed_sec"/>
+
+                    <Button
+                        android:text="Share"
+                        android:textSize="14dp"
+                        android:layout_width="120dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:id="@+id/not_share"
+                        android:textAllCaps="false"
+
+                        android:textColor="@color/orange"
+                        android:background="@drawable/orange_border_btn"
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

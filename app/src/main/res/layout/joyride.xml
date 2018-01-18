@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_weight=".24"
+        android:weightSum="1"
+        android:gravity="center"
+        android:layout_height="0dp">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".85"
+            android:id="@+id/text_joyride"
+            android:gravity="center"
+            android:textSize="15dp"
+            android:text="@string/joride_4"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".15"
+            android:text="Get started"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:id="@+id/start"
+            android:visibility="gone"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/orange"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_weight=".76"
+        android:gravity="top|center"
+        android:layout_height="0dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scrollView2" >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:src="@mipmap/joyride1"
+                    android:id="@+id/imageView4_joyride1" />
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add_child"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.skwibble.skwibblebook.user_group.Add_child">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:background="@color/Medium"
+        android:gravity="center"
+        android:weightSum="1"
+        android:layout_height="50dp">
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_weight=".15"
+            android:gravity="center"
+            style="@style/SelectableItemBackground"
+            android:id="@+id/imaqscback"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="17dp"
+                android:src="@mipmap/back"
+                android:visibility="invisible"
+                android:layout_weight="1" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_weight=".7"
+            android:gravity="center"
+
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="Switch your Child's Stories"
+                android:gravity="center"
+                android:textSize="14dp"
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textasVhtiew7"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:visibility="visible"
+
+            android:id="@+id/imageView_edfit"
+            android:layout_weight=".15"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:src="@mipmap/cross_white"
+
+                android:layout_weight="1" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:id="@+id/add_new_child"
+            android:gravity="center"
+            android:layout_height="60dp">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                ripple:srcCompat="@mipmap/add_new_child"
+                android:id="@+id/imageView8"
+                android:layout_weight=".17" />
+
+            <TextView
+                android:text="Add New Child"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center|left"
+                android:textSize="12dp"
+                android:textColor="@color/black"
+                android:id="@+id/textViewws21"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:id="@+id/switch_list"
+            android:divider="@android:color/transparent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+
+</RelativeLayout>

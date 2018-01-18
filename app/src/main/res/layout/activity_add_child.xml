@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add_child"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.skwibble.skwibblebook.user_group.Add_child">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:background="@color/Medium"
+        android:gravity="center"
+        android:weightSum="1"
+        android:layout_height="50dp">
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_weight=".15"
+            android:gravity="center"
+            style="@style/SelectableItemBackground"
+            android:id="@+id/imaqscback"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="17dp"
+                android:src="@mipmap/back"
+
+                android:layout_weight="1" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_weight=".7"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="Add Child"
+                android:gravity="center"
+                android:textSize="14dp"
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textVhtiew7"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:visibility="invisible"
+
+            android:id="@+id/imageView_edit"
+            android:layout_weight=".15"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/edit_icon"
+
+                android:layout_weight="1" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/login_fyyorm"
+                android:layout_width="match_parent"
+
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:gravity="center_horizontal"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:gravity="center"
+                            android:layout_height="match_parent">
+
+                            <com.facebook.drawee.view.SimpleDraweeView
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+
+                                ripple:placeholderImage="@mipmap/sample"
+                                ripple:failureImage="@mipmap/sample"
+                                ripple:roundAsCircle="true"
+                                android:id="@+id/imageView6_img"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:gravity="center"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="110dp"
+                                android:layout_height="110dp"
+                                android:src="@mipmap/circle"
+                                android:id="@+id/imageView6"
+                                android:visibility="gone"
+                                android:layout_alignParentBottom="true"
+                                />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:inputType="textPersonName"
+                        android:hint="Child Name"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/border_color"
+                        android:ems="10"
+                        android:textSize="12dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="8dp"
+                        android:background="@drawable/edit_child_back"
+                        android:id="@+id/editText_child_name"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_margin="20dp"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:inputType="textPersonName"
+                        android:hint="Nickname"
+                        android:textColorHint="@color/border_color"
+                        android:paddingLeft="20dp"
+                        android:textSize="12dp"
+                        android:textColor="@color/black"
+                        android:ems="10"
+                        android:paddingRight="8dp"
+                        android:background="@drawable/edit_child_back"
+                        android:id="@+id/editText2_nickname"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_height="match_parent">
+
+
+                    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center|left"
+                        android:weightSum="1"
+                        android:orientation="horizontal">
+                        <RadioButton android:id="@+id/radio_boy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Baby Boy"
+                            android:layout_weight=".5"
+                            android:textColor="@color/black"
+                            android:paddingLeft="15dp"
+                            android:checked="true"
+                            android:button="@drawable/custom_btn_radio"
+                            android:onClick="onRadioButtonClicked"/>
+                        <RadioButton android:id="@+id/radio_girl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Baby Girl"
+                            android:textColor="@color/black"
+                            android:layout_weight=".5"
+                            android:paddingLeft="15dp"
+                            android:button="@drawable/custom_btn_radio"
+                            android:onClick="onRadioButtonClicked"/>
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center"
+                        android:id="@+id/textView_date"
+                        android:background="@drawable/edit_child_back"
+                        android:layout_height="35dp">
+
+                        <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                            android:text="D.O.B / Due Date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingLeft="20dp"
+                            android:id="@+id/text_date"
+                            android:gravity="center|left"
+                            android:textSize="12dp"
+                            android:drawableRight="@mipmap/calender"
+                            ripple:compoundDrawableHeight="18dp"
+                            android:layout_marginRight="10dp"
+                            android:textColor="@color/border_color"
+                            android:layout_weight="1" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_margin="20dp"
+                    android:gravity="center|left"
+                    android:id="@+id/textView6_relation"
+                    android:background="@drawable/edit_child_back"
+
+                    android:layout_height="35dp">
+
+                    <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                        android:text="Relation with child"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView6_child_relation"
+                        android:paddingLeft="20dp"
+                        android:textSize="12dp"
+                        ripple:compoundDrawableHeight="8dp"
+                        android:drawableRight="@mipmap/drop_down"
+                        android:layout_marginRight="10dp"
+                        android:textColor="@color/border_color"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="40dp"
+                    style="@style/SelectableItemBackground"                    android:layout_height="35dp">
+
+                    <Button
+                        android:text="Add Child"
+                        android:textSize="14dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/button2"
+                        android:textAllCaps="false"
+                        android:background="@drawable/update_btn_back"
+                        android:layout_weight="1" />
+                </RelativeLayout>
+
+
+
+
+
+            </LinearLayout>
+
+   </ScrollView>
+
+
+</LinearLayout>

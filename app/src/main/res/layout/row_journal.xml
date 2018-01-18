@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+
+
+
+    <RelativeLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+
+        android:background="@drawable/layout_rounded"
+        android:layout_height="150dp">
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/image_not_found"
+            app:placeholderImage="@mipmap/image_not_found"
+            app:failureImage="@mipmap/image_not_found"
+            app:roundAsCircle="false"
+            app:roundedCornerRadius="5dp"
+            android:id="@+id/imageView20" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:id="@+id/layer"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/layout_bottom_rounded">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Jan"
+                android:id="@+id/monthtxt"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:id="@+id/dim_disable"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/rounded_layout"
+            android:layout_centerHorizontal="true"></LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

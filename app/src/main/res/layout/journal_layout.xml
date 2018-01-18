@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:background="@color/grey"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_height="fill_parent">
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+
+        android:layout_alignParentStart="true">
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:background="@color/Medium"
+            android:gravity="center"
+            android:weightSum="1"
+
+            android:layout_height="50dp">
+
+
+            <RelativeLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_weight=".15"
+                android:gravity="center"
+                style="@style/SelectableItemBackground"
+                android:visibility="invisible"
+                android:id="@+id/imaqetddcffffbasck"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/back"
+
+                    android:layout_weight="1" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+
+                android:gravity="center"
+                android:layout_weight=".7"
+                android:layout_height="match_parent">
+
+
+
+                <TextView
+                    android:text="Photo Journal"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textdddView7"
+                    />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_weight=".15"
+                android:gravity="center"
+                style="@style/SelectableItemBackground"
+                android:id="@+id/indddiew10"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:visibility="visible"
+                    android:src="@mipmap/setting_white"
+                    android:id="@+id/inviteimageView10"
+                    />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height=".5dp"
+            android:background="@color/grey_text"></LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="25dp"
+            android:gravity="center"
+            android:background="@color/Medium"
+            android:id="@+id/yesass"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=""
+                android:visibility="visible"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:id="@+id/current_year"
+                android:textColor="@color/white"/>
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="5dp"
+                android:visibility="visible"
+                android:id="@+id/rotate_view"
+                android:src="@mipmap/white_drop_down"/>
+
+
+
+        </LinearLayout>
+
+
+        <GridView
+
+            android:id="@+id/lvuxsadsdser"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:numColumns="2"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:id="@+id/not_sd_xxxlayout"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:src="@mipmap/post_not_found"
+                android:id="@+id/xxxx"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:id="@+id/not_ddsound_txt"
+                android:textColor="@color/black"
+                android:text="@string/photo_jrnl"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="125dp"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/not_xxx_layout"
+                    android:background="@drawable/orange_roundes_btn"
+                    android:layout_height="25dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add Child"
+                        android:id="@+id/not_ffdtxt"
+                        android:textColor="@color/orange"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>

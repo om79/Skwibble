@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:weightSum="1"
+        android:gravity="center"
+        android:layout_height="75dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight=".25"
+            android:layout_width="0dp"
+            android:gravity="center"
+
+            android:layout_height="match_parent">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+
+                ripple:placeholderImage="@mipmap/child_pic"
+                ripple:failureImage="@mipmap/child_pic"
+                ripple:roundAsCircle="true"
+                android:id="@+id/story_imageView10_feed" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight=".75"
+            android:layout_width="0dp"
+
+            android:layout_marginTop="5dp"
+            android:gravity="center|left|top"
+            android:layout_height="match_parent">
+
+            <TextView
+
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:id="@+id/story_textView23_feed" />
+
+            <TextView
+
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="4dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/story_textView22_feed" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:layout_width="70dp"
+                    android:layout_height="25dp"
+                    android:text="Accept"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    android:gravity="center"
+                    android:textAllCaps="false"
+                    android:layout_marginRight="15dp"
+                    android:id="@+id/acc_bt_feed"
+                    android:background="@drawable/update_btn_back"/>
+                <Button
+                    android:layout_width="70dp"
+                    android:layout_height="25dp"
+                    android:text="Reject"
+                    android:gravity="center"
+                    android:textColor="@color/orange"
+                    android:textSize="12dp"
+                    android:textAllCaps="false"
+                    android:id="@+id/rej_bt_feed"
+                    android:background="@drawable/orange_border_btn"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

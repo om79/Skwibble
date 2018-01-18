@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add_child"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:background="@color/Medium"
+        android:gravity="center|left"
+        android:weightSum="1"
+        android:layout_height="50dp">
+
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_weight=".1"
+            android:gravity="center"
+            style="@style/SelectableItemBackground"
+            android:id="@+id/imaqseyfffcback"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="17dp"
+                android:src="@mipmap/back"
+
+                android:layout_weight="1" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".1"></LinearLayout>
+
+        <TextView
+            android:text="Month"
+            android:gravity="center"
+            android:textSize="14dp"
+            android:layout_weight=".6"
+            android:textColor="@color/white"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/texdfdftView7"
+            />
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_weight=".2"
+
+            android:gravity="center|right"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:gravity="center|right"
+                style="@style/SelectableItemBackground"
+                android:id="@+id/textView10_post"
+                android:visibility="invisible"
+                android:layout_marginRight="20dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:text="Upload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+
+                    android:gravity="right"
+
+                    android:textSize="15dp"
+                    />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_marginTop="50dp"
+        android:weightSum="1"
+        android:layout_height="match_parent">
+
+
+        <GridView
+
+            android:id="@+id/lvuxsfdfdser"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_margin="3dp"
+            android:numColumns="3"
+            android:verticalSpacing="5dp"/>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

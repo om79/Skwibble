@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add_child"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="com.skwibble.skwibblebook.story_group.Edit_comment">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:background="@color/Medium"
+        android:gravity="center"
+        android:weightSum="1"
+        android:layout_height="50dp">
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_weight=".15"
+            android:gravity="center"
+            style="@style/SelectableItemBackground"
+            android:id="@+id/imsdvb8_back"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="17dp"
+                android:src="@mipmap/back"
+
+                android:layout_weight="1" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".05"></LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_weight=".6"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="Edit Comment"
+                android:gravity="center"
+                android:textSize="14dp"
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViedw7"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:visibility="visible"
+
+            android:id="@+id/imageVssiewss_edit"
+            android:layout_weight=".2"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="Update"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="14dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/edit_scroll"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:gravity="center|left"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:gravity="center|left"
+                    android:layout_marginLeft="20dp"
+                    android:layout_height="40dp"
+                    >
+
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+
+                        ripple:placeholderImage="@mipmap/feed_default_user"
+                        ripple:failureImage="@mipmap/feed_default_user"
+                        ripple:roundAsCircle="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="3dp"
+                        android:id="@+id/buzaqs_imageView10"
+                        />
+
+                    <TextView
+
+                        android:textColor="@color/black"
+                        android:textSize="12dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/buddweView22"
+                        android:layout_marginLeft="12dp"
+                        android:maxLength="15"
+                        android:layout_weight="1" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/editTdddext2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:paddingBottom="80dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:textColor="@color/black"
+                    android:background="@drawable/edit_text_back"
+                    android:textSize="12dp"
+                    android:inputType="text|textMultiLine|textCapSentences"
+                     />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+</LinearLayout>

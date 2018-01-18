@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add_child"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.skwibble.skwibblebook.user_group.Add_child">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight=".47">
+            <LinearLayout
+                android:id="@+id/email_lssogin_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+
+                android:layout_gravity="top"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/baby_unfill"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:id="@+id/xa"
+                    android:textSize="16dp"
+                    android:text="Want to start a Story?"/>
+
+                <Button
+                    android:text="Add Child"
+                    android:textSize="14dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:id="@+id/button2qd"
+                    android:textAllCaps="false"
+                    android:background="@drawable/update_btn_back"
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight=".06">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:orientation="horizontal"
+                    android:id="@+id/view2"
+                    android:layout_weight=".44"
+                    android:background="@color/black"
+                    />
+
+                <TextView
+                    android:text="or"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textyView4"
+                    android:gravity="center"
+                    android:layout_marginBottom="2dp"
+                    android:layout_weight=".12"
+
+                    android:textSize="18dp"
+                    android:textColor="@color/black" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:orientation="horizontal"
+                    android:id="@+id/view"
+                    android:layout_weight=".44"
+                    android:background="@color/black"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight=".47">
+
+            <LinearLayout
+                android:id="@+id/email_login_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+
+                android:layout_gravity="top"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/story_share_icon"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:id="@+id/xb"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:text="Been invited to Skwibble?"/>
+
+                <Button
+                    android:text="Enter Code"
+                    android:textSize="14dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:id="@+id/button2"
+                    android:textAllCaps="false"
+                    android:background="@drawable/update_btn_back_purple"
+                     />
+
+            </LinearLayout>
+    </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
+

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:gravity="center|left"
+            android:id="@+id/header_playpen"
+            android:visibility="gone"
+            android:layout_height="30dp">
+
+            <TextView
+                android:text="Buddies in Playpen"
+                android:layout_width="wrap_content"
+                android:textColor="@color/orange"
+                android:textSize="10dp"
+                android:layout_marginLeft="25dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView30"
+                />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="10dp"
+                android:background="@color/border_color"
+                android:layout_height="0.5dp"
+                ></LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:id="@+id/overlay_layout"
+            android:weightSum="1"
+            android:gravity="center"
+            android:layout_height="55dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight=".2"
+                android:layout_width="0dp"
+                android:gravity="right|center"
+                android:layout_margin="5dp"
+                android:layout_height="match_parent">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    ripple:placeholderImage="@mipmap/feed_default_user"
+                    ripple:failureImage="@mipmap/feed_default_user"
+                    ripple:roundAsCircle="true"
+                    android:id="@+id/imageView10" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight=".6"
+                android:layout_width="0dp"
+                android:layout_marginLeft="5dp"
+
+                android:gravity="center|left"
+                android:layout_height="match_parent">
+
+                <TextView
+
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:textSize="12dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView23" />
+
+                <TextView
+
+                    android:textColor="@color/border_color"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="8dp"
+                    android:id="@+id/textView22" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight=".2"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="match_parent">
+
+                <com.skwibble.skwibblebook.utility.SmoothCheckBox
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:id="@+id/checkBox4_last"
+
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

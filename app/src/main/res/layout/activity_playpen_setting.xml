@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_create_playpen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.skwibble.skwibblebook.playpen_group.Create_playpen">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:background="@color/Medium"
+            android:gravity="center|left"
+            android:weightSum="1"
+            android:layout_height="50dp">
+
+
+            <RelativeLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_weight=".2"
+                android:gravity="center"
+                style="@style/SelectableItemBackground"
+                android:id="@+id/imaqelggack"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="17dp"
+                    android:src="@mipmap/back"
+                    android:layout_marginRight="15dp"
+                 />
+            </RelativeLayout>
+
+            <TextView
+                android:text="Playpen Settings"
+                android:gravity="center"
+                android:textSize="14dp"
+                android:layout_weight=".6"
+                android:textColor="@color/white"
+                android:layout_width="0dp"
+                android:maxLength="20"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView7"
+                />
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_weight=".2"
+                android:gravity="center|right"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:gravity="center|right"
+                    style="@style/SelectableItemBackground"
+                    android:id="@+id/textVjdjygwffpost"
+                    android:layout_marginRight="20dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="Update"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:id="@+id/uff"
+                        android:gravity="right"
+
+                        android:textSize="14dp"
+                        />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:id="@+id/disable_layout"
+
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="20dp">
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:gravity="center|left"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:gravity="center|left"
+                        android:layout_marginLeft="25dp"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:gravity="center|left"
+                            android:layout_marginLeft="5dp"
+                            android:layout_height="match_parent">
+
+                            <com.facebook.drawee.view.SimpleDraweeView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                ripple:placeholderImage="@mipmap/create_playpen_pic"
+                                ripple:failureImage="@mipmap/create_playpen_pic"
+                                ripple:roundAsCircle="true"
+                                android:id="@+id/imageViewss6_img"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:gravity="center|left"
+
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:src="@mipmap/circle"
+                                android:id="@+id/imageView6"
+                                android:layout_alignParentBottom="true"
+                                />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:gravity="center"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_height="wrap_content">
+
+
+
+                            <EditText
+                                android:hint="Playpen Name"
+
+                                android:gravity="center|left"
+                                android:textSize="13dp"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/border_color"
+                                android:layout_margin="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:background="@drawable/edit_text_back"
+                                android:id="@+id/textView31"
+                                 />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/edit_child_back"
+                    android:layout_height="match_parent">
+
+
+
+                </LinearLayout>
+
+
+
+
+
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:gravity="center|left"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="30dp"
+            android:layout_height="40dp">
+
+            <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                android:text="Notification"
+                android:layout_width="match_parent"
+                android:drawableLeft="@mipmap/bell_icon"
+
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:drawablePadding="20dp"
+                android:gravity="center|left"
+                ripple:compoundDrawableHeight="20dp"
+                ripple:compoundDrawableWidth="20dp"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                android:id="@+id/textView6"
+                android:layout_weight="1" />
+
+            <android.support.v7.widget.SwitchCompat
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:checked="true"
+                android:id="@+id/Switch_playpen"
+                android:theme="@style/MySwitch"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="50dp">
+
+            <Button
+
+                style="@style/Base.Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:id="@+id/emaghfgfhn"
+                android:textAllCaps="false"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textSize="14dp"
+                android:textColor="@color/white"
+                android:background="@drawable/update_btn_back"
+                android:text="Delete Playpen"
+ />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</RelativeLayout>

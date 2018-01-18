@@ -1,1 +1,1 @@
-include ':app'
+include ':app', ':mediamultiselector', ':app:libraries:ijkplayer-java', ':app:libraries:mkvideoplayer'

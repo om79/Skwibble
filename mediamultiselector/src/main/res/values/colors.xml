@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4F4F4F</color>
+    <color name="colorPrimaryDark">#4F4F4F</color>
+    <color name="colorAccent">#FF7362</color>
+    <color name="colorAppGreen">#9E88C2</color>
+
+    <color name="colorPrimaryText">#FFFFFF</color>
+    <color name="colorPrimaryTextSecondary">#ADADAD</color>
+
+    <color name="colorItemMaskBg">#88000000</color>
+
+    <color name="colorStatusBar">#0D0D0D</color>
+    <color name="colorVideoPlayerBg">#030304</color>
+</resources>

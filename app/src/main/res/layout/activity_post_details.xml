@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_post_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    tools:context="com.skwibble.skwibblebook.story_group.Post_details">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/wwwwxxx"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:background="@color/Medium"
+            android:gravity="center"
+            android:weightSum="1"
+            android:id="@+id/top_layer"
+            android:layout_height="50dp">
+
+            <RelativeLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_weight=".15"
+                android:gravity="center"
+                style="@style/SelectableItemBackground"
+                android:id="@+id/imageViaaewfdvb8_back"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="17dp"
+                    android:src="@mipmap/back"
+
+                    android:layout_weight="1" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_weight=".7"
+                android:gravity="center"
+                android:layout_height="match_parent">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:visibility="invisible"
+                    app:placeholderImage="@mipmap/child_pic"
+                    app:failureImage="@mipmap/child_pic"
+                    app:roundAsCircle="true"
+                    android:id="@+id/imageView10_child"
+                     />
+
+                <TextView
+
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView7_childname"
+
+                    android:maxLength="20"
+                     />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:gravity="center"
+
+
+                android:id="@+id/imageView_edit"
+                android:layout_weight=".15"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/edit_icon"
+                    android:visibility="invisible"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="75dp"
+            android:layout_height="wrap_content">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:id="@+id/post_detail_scroll"
+            android:background="@drawable/post_background_card"
+            android:visibility="visible"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:background="@android:color/transparent"
+                    android:orientation="vertical" >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:layout_height="match_parent">
+
+                        <RelativeLayout
+                            android:id="@+id/LinearLayout1"
+                            android:layout_width="match_parent"
+                            android:background="@android:color/black"
+                            android:visibility="visible"
+                            android:layout_height="250dp"
+                            android:orientation="horizontal" >
+
+                            <com.skwibble.skwibblebook.utility.ClickableViewPager
+                                android:id="@+id/vp_slider_post_show"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+
+                                />
+
+                            <LinearLayout
+                                android:id="@+id/ll_dots__post_show"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginBottom="15dp"
+                                android:gravity="center"
+                                android:orientation="horizontal"></LinearLayout>
+
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+
+                            android:layout_height="19dp"
+                            android:background="#CCFA6800"
+                            android:id="@+id/hhhhh"
+                            android:gravity="center|left"
+                            android:layout_above="@+id/linearLayout2"
+                            android:layout_alignParentStart="true">
+
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="19dp"
+
+                                android:layout_marginLeft="45dp"
+                                android:orientation="horizontal">
+                                <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                                    android:text=""
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center|left"
+                                    android:visibility="gone"
+                                    android:id="@+id/textVuiuiiew21"
+                                    android:drawablePadding="5dp"
+                                    android:textColor="@color/white"
+                                    app:compoundDrawableHeight="10dp"
+                                    android:textSize="12dp"
+                                    android:drawableLeft="@mipmap/celebration"
+                                    />
+
+                                <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                                    android:id="@+id/textVidfsadadew21"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="15dp"
+                                    android:drawableLeft="@mipmap/white_only_me"
+                                    android:drawablePadding="10dp"
+                                    android:textColor="@color/white"
+                                    android:gravity="center|left"
+                                    android:visibility="gone"
+                                    android:textSize="12dp"
+                                    android:text=""
+
+                                    app:compoundDrawableHeight="10dp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+
+                            android:background="@drawable/post_detail_underline"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/LinearLayout1"
+                            android:id="@+id/linearLayout2">
+                            <TextView
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+
+                                android:layout_width="match_parent"
+                                android:textSize="15dp"
+
+
+                                android:layout_height="wrap_content"
+                                android:id="@+id/textViejjw9"
+                                />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/zxxx"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginBottom="-4dp"
+                            android:src="@mipmap/face_post_detail"
+
+                            android:layout_alignBottom="@+id/hhhhh"
+                            android:layout_alignParentStart="true" />
+
+
+                    </RelativeLayout>
+
+
+
+
+
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:background="@android:color/transparent"
+                        android:gravity="center|left"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_height="match_parent">
+
+
+
+                        <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                            android:text="0"
+                            android:gravity="center|left"
+                            android:textSize="10dp"
+                            android:layout_marginLeft="15dp"
+                            android:drawablePadding="5dp"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            app:compoundDrawableHeight="10dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView21_like"
+                            android:drawableLeft="@mipmap/liked"
+                            />
+
+                        <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                            android:text="0"
+                            android:gravity="center|left"
+                            android:textSize="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView9_cmnt"
+                            android:drawablePadding="5dp"
+                            app:compoundDrawableHeight="10dp"
+                            android:drawableLeft="@mipmap/cmnt"
+                            />
+                        <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                            android:text=""
+                            android:gravity="center|left"
+                            android:textSize="10dp"
+                            android:textColor="@color/black"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="wrap_content"
+                            app:compoundDrawableHeight="10dp"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@mipmap/strory_date"
+                            android:id="@+id/textView22_date"
+                            android:drawablePadding="5dp"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:id="@+id/sblinsfsfgdff"
+                        android:background="@android:color/transparent"
+                        android:layout_height="match_parent">
+
+
+                        <com.github.paolorotolo.expandableheightlistview.ExpandableHeightListView
+                            android:layout_width="match_parent"
+                            android:id="@+id/listview_cmnt"
+                            android:divider="@android:color/transparent"
+                            android:background="@android:color/transparent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+        </ScrollView>
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:background="@color/white"
+        android:layout_margin="5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+
+            android:gravity="center|left"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+
+            android:layout_height="match_parent">
+
+
+            <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                android:text="Like  "
+                android:gravity="center|left"
+                android:paddingLeft="15dp"
+                android:textSize="15dp"
+                android:textColor="@color/orange"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                app:compoundDrawableHeight="15dp"
+                android:drawablePadding="5dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/texcas1_like"
+                android:drawableLeft="@mipmap/not_like"
+                android:layout_marginRight="20dp"
+                 />
+
+            <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                android:text="Share "
+                android:gravity="center|left"
+
+                android:textColor="@color/orange"
+                android:layout_width="wrap_content"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:id="@+id/texonlyew9_cmnt"
+                android:drawablePadding="5dp"
+                android:textSize="15dp"
+                app:compoundDrawableHeight="12dp"
+                android:drawableLeft="@mipmap/share_fb"
+                android:layout_marginRight="20dp"
+                />
+
+
+            <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                android:text="Edit  "
+                android:gravity="center|left"
+                android:textColor="@color/orange"
+                android:drawablePadding="5dp"
+                android:layout_width="wrap_content"
+                android:textSize="15dp"
+                android:visibility="gone"
+                app:compoundDrawableHeight="12dp"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/edit"
+                android:id="@+id/textViedit_date"
+                android:layout_marginRight="20dp"
+                 />
+
+            <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                android:text="Delete"
+                android:textColor="@color/orange"
+                android:drawablePadding="5dp"
+                android:textSize="15dp"
+                android:gravity="center|left"
+                android:visibility="gone"
+                android:drawableLeft="@mipmap/delete"
+                app:compoundDrawableHeight="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView9"
+                android:layout_marginRight="20dp"
+                 />
+            <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                android:text="Story"
+                android:textColor="@color/orange"
+                android:drawablePadding="5dp"
+                android:textSize="15dp"
+                android:gravity="center|left"
+                android:visibility="gone"
+
+                android:drawableLeft="@mipmap/post_clone_story"
+                app:compoundDrawableHeight="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textVissew9"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editTcmntext3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/cmnt_back"
+
+                android:ems="10"
+                android:hint="Type here..."
+                android:inputType="textCapSentences|textPersonName|textMultiLine"
+                android:padding="7dp"
+                android:paddingLeft="10dp"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/border_color"
+                android:textSize="13dp" />
+
+            <ImageView
+                android:id="@+id/buttopostn3"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:src="@drawable/ic_menu_send"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

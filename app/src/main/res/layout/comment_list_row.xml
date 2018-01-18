@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@android:color/transparent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:weightSum="1"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="2dp"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight=".15"
+            android:layout_width="0dp"
+            android:gravity="top|center"
+            android:layout_height="match_parent">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+
+                app:placeholderImage="@mipmap/feed_default_user"
+                app:failureImage="@mipmap/feed_default_user"
+                app:roundAsCircle="true"
+                android:id="@+id/imageViewqwe10"
+                 />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+
+            android:layout_weight=".85"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <TextView
+
+                android:textColor="@color/orange"
+                android:textStyle="bold"
+                android:textSize="14dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2asdf5" />
+
+            <TextView
+
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2oufdg4" />
+
+            <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+
+                android:textColor="@color/Dark"
+                android:textSize="12dp"
+
+                android:drawableLeft="@mipmap/purple_date"
+                app:compoundDrawableHeight="8dp"
+                android:drawablePadding="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textVivbkkew23" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

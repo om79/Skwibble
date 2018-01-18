@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+
+    android:weightSum="1"
+    android:background="@color/grey"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/buddies_head_back_layout"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/background_card"
+        android:layout_height="190dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:gravity="center|left"
+            android:layout_height="80dp"
+            android:layout_weight=".6">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                ripple:placeholderImage="@mipmap/feed_default_user"
+                ripple:failureImage="@mipmap/feed_default_user"
+                ripple:roundAsCircle="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/header_imageView10"
+                 />
+
+            <TextView
+
+                android:textColor="@color/orange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/header_textView22"
+                android:textSize="12dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight=".6">
+
+            <RelativeLayout
+                style="@style/SelectableItemBackground"
+                android:layout_weight=".5"
+                android:id="@+id/buddies_head_click_layout"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+
+                    <RelativeLayout
+
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:layout_height="140dp">
+                        <com.etsy.android.grid.util.DynamicHeightImageView
+                            android:id="@+id/buddies_head_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingBottom="15dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="15dp"
+                            android:paddingLeft="10dp"
+                            android:src="@mipmap/story_placeholer"
+                            android:gravity="center"
+                            android:scaleType="centerCrop"
+                            />
+                        <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                            android:text=" 0"
+                            android:gravity="center_vertical"
+                            android:drawablePadding="2dp"
+                            android:textColor="@color/white"
+                            android:layout_width="wrap_content"
+                            android:textSize="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="5dp"
+                            ripple:compoundDrawableHeight="10dp"
+
+                            android:layout_height="wrap_content"
+                            android:id="@+id/buddies_head_media_count"
+                            android:drawableRight="@mipmap/media_icon"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+
+                            />
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1"
+                android:layout_weight=".6">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="0dp"
+                    android:layout_weight=".8">
+
+                    <TextView
+                        android:id="@+id/buddies_head_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="4dp"
+                        android:paddingTop="4dp"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:textColor="@color/black"
+                        android:textSize="12dp"
+                        android:maxLines="4"
+
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:weightSum="1"
+
+                    android:gravity="center|left"
+
+                    android:layout_height="0dp"
+                    android:layout_weight=".2">
+
+                    <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                        android:text="30th Oct"
+                        android:gravity="center|left"
+                        android:paddingLeft="10dp"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:textSize="8dp"
+                        android:layout_marginRight="10dp"
+                        android:drawablePadding="5dp"
+                        android:singleLine="true"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@mipmap/strory_date"
+                        ripple:compoundDrawableHeight="10dp"
+                        android:id="@+id/buddies_head_textView2date2"
+                        />
+
+                    <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                        android:text="  0"
+                        android:gravity="center|left"
+                        android:drawablePadding="5dp"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:textSize="8dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/buddies_head_textVilikesew21"
+                        android:drawableLeft="@mipmap/not_like"
+                        ripple:compoundDrawableHeight="10dp"
+                        />
+
+                    <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                        android:text="  0"
+                        android:gravity="center|left"
+                        android:drawablePadding="5dp"
+                        android:textColor="@color/black"
+
+                        ripple:compoundDrawableHeight="10dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/buddies_head_textVicmntew9"
+                        android:layout_width="wrap_content"
+                        android:textSize="8dp"
+                        android:layout_marginRight="10dp"
+                        android:drawableLeft="@mipmap/cmnt"
+                         />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

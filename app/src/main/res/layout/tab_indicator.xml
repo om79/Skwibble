@@ -1,26 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="0dip"
-    android:layout_height="55dip"    
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="55dip"
+    android:layout_height="wrap_content"
     android:layout_weight="1"
     android:orientation="vertical"
-    
+    android:gravity="center"
     android:background="@drawable/tab_indicator"
-    android:padding="5dp">
+
+    android:padding="4dp">
 
     <ImageView android:id="@+id/icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/icon"
-        
-    /> 
+
+        android:layout_marginBottom="9dp"
+        android:src="@mipmap/ic_launcher"
+     />
 
     <TextView android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true" 
         android:layout_centerHorizontal="true"
+        android:textAllCaps="false"
+        android:textSize="10dp"
+
+        android:textColor="@color/white"
+        android:layout_marginBottom="3dp"
         style="?android:attr/tabWidgetStyle"
-    />    
+    />
+    <com.skwibble.skwibblebook.utility.CircularTextView
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="37dp"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:padding="3dp"
+        android:gravity="center"
+        android:textSize="11dp"
+        android:textColor="@color/white"
+
+        android:id="@+id/qazxsw"/>
 </RelativeLayout>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:id="@+id/header_click"
+    android:weightSum="1"
+    android:background="@color/grey"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/head_back_layout"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/header_background_card"
+        android:layout_height="150dp">
+
+        <RelativeLayout
+            style="@style/SelectableItemBackground"
+            android:layout_weight=".5"
+            android:id="@+id/head_click_layout"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="140dp">
+
+
+                    <com.etsy.android.grid.util.DynamicHeightImageView
+                        android:id="@+id/head_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="15dp"
+                        android:paddingRight="5dp"
+                        android:paddingTop="15dp"
+                        android:paddingLeft="5dp"
+                        android:src="@mipmap/story_placeholer"
+                        android:gravity="center"
+                        android:scaleType="centerCrop"
+                        />
+                    <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                        android:text=" 0"
+                        android:gravity="center_vertical"
+                        android:drawablePadding="2dp"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:textSize="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        ripple:compoundDrawableHeight="10dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/head_media_count"
+                        android:drawableRight="@mipmap/media_icon"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                         />
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1"
+            android:layout_weight=".7">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:id="@+id/heaer_click"
+                android:layout_height="0dp"
+                android:layout_weight=".8">
+
+                <TextView
+                    android:id="@+id/head_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:paddingTop="4dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:textColor="@color/black"
+                    android:maxLines="4"
+                    android:textSize="12dp"
+
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:weightSum="1"
+
+                android:gravity="center|left"
+
+                android:layout_height="0dp"
+                android:layout_weight=".2">
+
+                <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                    android:text="30th Oct"
+                    android:gravity="center|left"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:textSize="8dp"
+                    android:layout_marginRight="10dp"
+                    android:drawablePadding="5dp"
+                    android:singleLine="true"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@mipmap/strory_date"
+                    ripple:compoundDrawableHeight="10dp"
+                    android:id="@+id/head_textView2date2"
+                     />
+
+                <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                    android:text="  0"
+                    android:gravity="center|left"
+                    android:drawablePadding="5dp"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:textSize="8dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/head_textVilikesew21"
+                    android:drawableLeft="@mipmap/not_like"
+                    ripple:compoundDrawableHeight="10dp"
+                     />
+
+                <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                    android:text="  0"
+                    android:gravity="center|left"
+                    android:drawablePadding="5dp"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:textSize="8dp"
+                    android:layout_marginRight="10dp"
+                    ripple:compoundDrawableHeight="10dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/head_textVicmntew9"
+
+                    android:drawableLeft="@mipmap/cmnt"
+                     />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

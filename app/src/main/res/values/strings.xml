@@ -1,10 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="hello">Hello World, Tab at Bottom!</string>
-    <string name="app_name">Tabs at Bottom</string>
-    <string-array name="Spinner_Content">
-        <item>One</item>
-        <item>Two</item>
-        <item>Three</item>
-    </string-array>
+    <string name="app_name">Skwibble</string>
+    <string name="trimming_progress">Trimming your video...</string>
+    <string name="video_saved_at">Video saves at : $%1s</string>
+    <string name="not_found_playpen">oh no! Where are all the \n Playpens? Create a group now, \n add your Buddies and share the\n joy of seeing your child grow."</string>
+    <string name="not_found_create_playpen">You don\'t have any buddy to add in group</string>
+    <string name="post_not_found_add_post">Ready to get started? Add your \n child\'s first post or photo here!</string>
+    <string name="post_not_found_playpen">Oops! It looks like none of your \n Buddies have shared \n anything...yet!</string>
+    <string name="post_not_found_add_child">Ready to write the greatest \n children\'s story ever told? Add \n your child and share their posts &amp; photos here!</string>
+    <string name="jurnal_not_found">You have to add your child first \n in order to preserve his/her \n memories</string>
+    <string name="buddies_post_not_found">Well, this is awkward...you \n don\'t appear to have any \n Buddies at the moment! </string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="signup_txt">Sign Up</string>
+    <string name="login_txt">Already have an account? </string>
+    <string name="sign_in_txt"><b> Sign In</b></string>
+    <string name="share_code_txt">Invite your friends and family \n to follow your child\'s Story \n by simply sharing their \n unique code below!</string>
+    <string name="add_buddies_txt">So You\'ve been invited to follow a story? \n You must be pretty important! \n Just enter the unique code you\'ve \n been given, tell us what the child \n calls you &amp; you\'ll be ready to go!</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign In</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
+    <string name="title_activity_signup">Sign up</string>
+    <string name="attachment_much_long">Attachment is much long, max size is 12mb</string>
+    <string name="need_facebook_app">You need native facebook app to perform this action</string>
+    <string name="follower_txt">Here are your friends that can see your Child\'s Story</string>
+    <string name="following_txt">Here are your Little Buddies Who\'ve accepted your request to follow their story</string>
+    <string name="photo_jrnl">You have to add your child first \n in order to preserve his/her \n memories</string>
+    <string name="activity_sample_description">Click on the button to request specific permission</string>
+    <string name="location">Location</string>
+    <string name="camera">Camera</string>
+
+    <string name="contacts">Contacts</string>
+    <string name="permission_status_granted">Granted</string>
+    <string name="permission_status_unknown">Unknown</string>
+    <string name="permission_status_denied_once">Denied Once</string>
+    <string name="permission_status_denied_forever">Denied Forever</string>
+    <string name="permission_status_rationale">Show Rationale</string>
+    <string name="location_rationale">The location permission is necessary to locate hotels near you</string>
+    <string name="location_deny_dialog">Without location permission we can\'t show hotels near you</string>
+    <string name="camera_rationale">Wee need camera permission to take a picture of your swimming pool</string>
+    <string name="camera_deny_dialog">Without camera permission swimming pool selfies are disabled</string>
+    <string name="title_activity_months_details">Months_details</string>
+
+    <string name="dialog_default_title">Here\'s a message!</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="LOADING">Loading...</string>
+    <string name="title_activity_full_pic_view">Full_pic_view</string>
+    <string name="joride_1">Getting started is easy! Fill in your \n child’s details and you’ll be ready to \n start recording your child’s journey on \n Skwibble!</string>
+    <string name="joride_2">Don’t worry! Recording your child’s \n funny memories, milestones &amp; special \n moments is safe and secure with \n Skwibble.</string>
+    <string name="joride_3">Create Playpens for each of your \n different groups of family and friends \n and allow them to share and \n contribute to your Child’s Story!</string>
+    <string name="joride_4">Add photos of your child regularly &amp; \n look back at how your child has \n changed and grown day by day!</string>
+    <string name="joride_5">Still need help? Why not get in \n touch! Email the team and we’ll get \n back to you as quick as we can!</string>
+    <string name="joride_5_half">Please go through our \n Terms &amp; Conditions and Privacy Policy</string>
+    <string name="feed_sec">Know any friends with kids \n who would love Skwibble? \n Share the invite below to get \n them started!</string>
+    <string name="following_new_bottom">Know any friends with kids who would love Skwibble? \n Share the invite below to get them started.</string>
+    <string name="following_new_top">Sorry! you don\'t seem to have added any buddies yet! \n Click the button to add their code now!</string>
+    <string name="story_pndng_txt">You can relax! There are no invite requests pending!</string>
+
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="Ok">Ok</string>
+    <string name="short_seconds">sec</string>
+    <string name="megabyte">MB</string>
+    <string name="kilobyte">KB</string>
+    <integer name="fab_duration">100</integer>
+    <dimen name="fab_elevation">5dp</dimen>
+    <dimen name="fab_rise">3dp</dimen>
+
+    <string name="data">{"address": \"yo test\"}</string>
+
 </resources>

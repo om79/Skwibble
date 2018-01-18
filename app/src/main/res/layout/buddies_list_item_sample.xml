@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="@drawable/background_card"
+        android:id="@+id/buddies_other_layout_head"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:gravity="center|left"
+            android:layout_height="40dp"
+            >
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                ripple:placeholderImage="@mipmap/feed_default_user"
+                ripple:failureImage="@mipmap/feed_default_user"
+                ripple:roundAsCircle="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="3dp"
+                android:id="@+id/buddies_imageView10"
+                />
+
+            <TextView
+
+                android:textColor="@color/orange"
+                android:textSize="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/buddies_textView22"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <RelativeLayout
+            style="@style/SelectableItemBackground"
+            android:id="@+id/buddies_click_layout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="match_parent">
+                    <com.etsy.android.grid.util.DynamicHeightImageView
+                        android:id="@+id/buddies_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:src="@mipmap/story_placeholer"
+                        android:gravity="center"
+                        android:scaleType="centerCrop"
+
+                        />
+                    <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                        android:text=" 0"
+                        android:gravity="center_vertical"
+                        android:drawablePadding="2dp"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:textSize="10dp"
+
+                        ripple:compoundDrawableHeight="10dp"
+                        android:layout_marginRight="14dp"
+                        android:layout_marginTop="12dp"
+
+                        android:layout_height="wrap_content"
+                        android:id="@+id/buddies_list_media_count"
+
+                        android:drawableRight="@mipmap/media_icon"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/buddies_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:paddingTop="4dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:textColor="@color/black"
+                    android:maxLines="4"
+                    android:textSize="12dp"/>
+
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:weightSum="1"
+                android:gravity="center|left"
+                android:layout_alignParentBottom="true"
+
+                android:layout_height="20dp">
+
+                <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                    android:text="  30th Oct"
+                    android:gravity="center|left"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:textSize="8dp"
+                    android:layout_marginRight="10dp"
+                    android:drawablePadding="5dp"
+                    android:singleLine="true"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@mipmap/strory_date"
+                    ripple:compoundDrawableHeight="10dp"
+                    android:id="@+id/buddies_textView2date2"
+                     />
+
+                <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                    android:text="  0"
+                    android:gravity="center|left"
+                    android:drawablePadding="5dp"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:textSize="8dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/buddies_textVilikesew21"
+                    android:drawableLeft="@mipmap/not_like"
+                    ripple:compoundDrawableHeight="10dp"
+                     />
+
+                <com.skwibble.skwibblebook.utility.TextViewDrawableSize
+                    android:text="  0"
+                    android:gravity="center|left"
+                    android:drawablePadding="5dp"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:textSize="8dp"
+                    android:layout_marginRight="10dp"
+                    ripple:compoundDrawableHeight="10dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/buddies_textVicmntew9"
+
+                    android:drawableLeft="@mipmap/cmnt"
+                     />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
