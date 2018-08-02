@@ -248,7 +248,7 @@
                             android:layout_marginTop="5dp"
                             android:textColor="@color/black"
                             android:id="@+id/acccnotfound_txt"
-                            android:text="@string/accept"/>
+                            />
 
                         <LinearLayout
                             android:layout_width="match_parent"

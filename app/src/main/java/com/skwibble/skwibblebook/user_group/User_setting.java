@@ -187,7 +187,7 @@ public class User_setting extends Activity {
                         .withRationales("In order to save file you will need to grant storage permission") //optional
                         .go();
 
-                if (has_image==false) {
+                if (!has_image) {
                     // Its visible
                     CharSequence[] items = { "Take Photo","Choose from Library", "Cancel"};
                     selectImage(items);

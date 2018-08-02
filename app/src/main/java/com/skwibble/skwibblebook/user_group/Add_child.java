@@ -64,7 +64,6 @@ public class Add_child extends AppCompatActivity  {
     boolean has_image=false;
     int i=1;
     HashMap<String, String> map = new HashMap<String, String>();
-
     String baby="false",compress_pic;
     RelativeLayout back;
     @Override
@@ -152,7 +151,7 @@ public class Add_child extends AppCompatActivity  {
 
             }
         });
-        if (objUsefullData.isNetworkConnected() == true) {
+        if (objUsefullData.isNetworkConnected()) {
             get_relation();
         }else {
             objUsefullData.make_toast("Please check your internet connection and try again");
@@ -504,7 +503,7 @@ public class Add_child extends AppCompatActivity  {
     private void submit_child()
     {
 
-        if(objUsefullData.isNetworkConnected()==false)
+        if(!objUsefullData.isNetworkConnected())
         {
             objUsefullData.showMsgOnUI("Please check your internet connection and try again");
         }

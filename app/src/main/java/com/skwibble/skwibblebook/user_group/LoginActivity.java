@@ -65,11 +65,10 @@ public class LoginActivity extends AppCompatActivity implements Auth.OnAuthListe
     SaveData save_data;
     LinearLayout fb;
     FacebookAuth facebookAuth;
-
-
     RelativeLayout mEmailSignInButton;
     Button sign_in;
     private BroadcastReceiver mRegistrationBroadcastReceiver;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,75 +99,79 @@ public class LoginActivity extends AppCompatActivity implements Auth.OnAuthListe
         sign_in = (Button) findViewById(R.id.emabutton);
         sign_in.setTypeface(objUsefullData.get_proxima_regusr());
         mPasswordView = (EditText) findViewById(R.id.editText2_password);
-            mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-                @Override
-                public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                    if (id == R.id.email_sign_in_button || id == EditorInfo.IME_ACTION_DONE) {
+        mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
+                if (id == R.id.email_sign_in_button || id == EditorInfo.IME_ACTION_DONE) {
 
 
-                        if(objUsefullData.isNetworkConnected())
-                        {
+                    if(objUsefullData.isNetworkConnected())
+                    {
 
-                            mEmailView.setError(null);
-                            mPasswordView.setError(null);
+                        mEmailView.setError(null);
+                        mPasswordView.setError(null);
 
-                            // Store values at the time of the login attempt.
-                            String email = mEmailView.getText().toString();
-                            String password = mPasswordView.getText().toString();
+                        // Store values at the time of the login attempt.
+                        String email = mEmailView.getText().toString();
+                        String password = mPasswordView.getText().toString();
 
-                            boolean cancel = false;
-                            View focusView = null;
+                        boolean cancel = false;
+                        View focusView = null;
 
-                            // Check for a valid password, if the user entered one.
-                            if (TextUtils.isEmpty(password) || !isPasswordValid(password)) {
-                                mPasswordView.setError(getString(R.string.error_invalid_password));
-                                focusView = mPasswordView;
-                                cancel = true;
-                            }
-
-                            // Check for a valid email address.
-                            if (TextUtils.isEmpty(email)) {
-                                mEmailView.setError(getString(R.string.error_field_required));
-                                focusView = mEmailView;
-                                cancel = true;
-                            } else if (objUsefullData.emailValidator(email)==false) {
-                                mEmailView.setError(getString(R.string.error_invalid_email));
-                                focusView = mEmailView;
-                                cancel = true;
-                            }
-
-                            if (cancel==true) {
-                                // There was an error; don't attempt login and focus the first
-                                // form field with an error.
-                                focusView.requestFocus();
-
-                            } else {
-
-
-
-                                if(!email.equals("")&&!password.equals("")) {
-                                    if (email.charAt(0) == ' ' || password.charAt(0) == ' ') {
-                                        objUsefullData.make_toast("Space is Removed");
-                                        mEmailView.setText(mEmailView.getText().toString().trim());
-                                        mEmailView.setSelection(mEmailView.getText().length());
-                                        mPasswordView.setText(mPasswordView.getText().toString().trim());
-                                        mPasswordView.setSelection(mPasswordView.getText().length());
-                                    }
-                                }
-                                attemptLogin(mEmailView.getText().toString(),mPasswordView.getText().toString());
-
-
-
-
-                            }
-                        }else {
-                            objUsefullData.make_toast("Please check your internet connection and try again");
+                        // Check for a valid password, if the user entered one.
+                        if (TextUtils.isEmpty(password) || !isPasswordValid(password)) {
+                            mPasswordView.setError(getString(R.string.error_invalid_password));
+                            focusView = mPasswordView;
+                            cancel = true;
                         }
-                        return true;
+
+                        // Check for a valid email address.
+                        if (TextUtils.isEmpty(email)) {
+                            mEmailView.setError(getString(R.string.error_field_required));
+                            focusView = mEmailView;
+                            cancel = true;
+                        } else if (!objUsefullData.emailValidator(email)) {
+                            mEmailView.setError(getString(R.string.error_invalid_email));
+                            focusView = mEmailView;
+                            cancel = true;
+                        }
+
+                        if (cancel) {
+                            // There was an error; don't attempt login and focus the first
+                            // form field with an error.
+                            focusView.requestFocus();
+
+                        } else {
+
+
+
+                            if(!email.equals("")&&!password.equals("")) {
+                                if (email.charAt(0) == ' ' || password.charAt(0) == ' ') {
+                                    objUsefullData.make_toast("Space is Removed");
+                                    mEmailView.setText(mEmailView.getText().toString().trim());
+                                    mEmailView.setSelection(mEmailView.getText().length());
+                                    mPasswordView.setText(mPasswordView.getText().toString().trim());
+                                    mPasswordView.setSelection(mPasswordView.getText().length());
+                                }
+                            }
+                            if (save_data.isExist(Definitions.firebase_token)) {
+                                attemptLogin(mEmailView.getText().toString(),mPasswordView.getText().toString());
+                            }else {
+                                objUsefullData.make_toast(getResources().getString(R.string.wrong));
+                            }
+
+
+
+
+                        }
+                    }else {
+                        objUsefullData.make_toast("Please check your internet connection and try again");
                     }
-                    return false;
+                    return true;
                 }
-            });
+                return false;
+            }
+        });
 
         mPasswordView.setTypeface(objUsefullData.get_proxima_regusr());
         mEmailSignInButton = (RelativeLayout) findViewById(R.id.email_sign_in_button);
@@ -176,7 +179,6 @@ public class LoginActivity extends AppCompatActivity implements Auth.OnAuthListe
         sign_in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
 
                 if(objUsefullData.isNetworkConnected())
                 {
@@ -209,7 +211,7 @@ public class LoginActivity extends AppCompatActivity implements Auth.OnAuthListe
                         cancel = true;
                     }
 
-                    if (cancel==true) {
+                    if (cancel) {
                         // There was an error; don't attempt login and focus the first
                         // form field with an error.
                         focusView.requestFocus();
@@ -225,7 +227,13 @@ public class LoginActivity extends AppCompatActivity implements Auth.OnAuthListe
                                 mPasswordView.setSelection(mPasswordView.getText().length());
                             }
                         }
+
+                        if (save_data.isExist(Definitions.firebase_token)) {
                             attemptLogin(mEmailView.getText().toString(),mPasswordView.getText().toString());
+                        }else {
+                            objUsefullData.make_toast(getResources().getString(R.string.wrong));
+                        }
+
 
 
 
@@ -248,8 +256,9 @@ public class LoginActivity extends AppCompatActivity implements Auth.OnAuthListe
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 //                try {
 //                    PackageInfo info = getPackageManager().getPackageInfo(
 //                            "com.skwibble.skwibblebook",
@@ -278,6 +287,9 @@ public class LoginActivity extends AppCompatActivity implements Auth.OnAuthListe
             public void onClick(View view) {
                 Intent forgot=new Intent(getApplicationContext(),Forgot_password.class);
                 startActivity(forgot);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
+
 
             }
         });
@@ -295,7 +307,7 @@ public class LoginActivity extends AppCompatActivity implements Auth.OnAuthListe
         });
 
 
-                mRegistrationBroadcastReceiver = new BroadcastReceiver() {
+        mRegistrationBroadcastReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
 
@@ -330,35 +342,35 @@ public class LoginActivity extends AppCompatActivity implements Auth.OnAuthListe
     protected void onStart() {
 
 
-            LocalBroadcastManager.getInstance(this).unregisterReceiver(mRegistrationBroadcastReceiver);
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(mRegistrationBroadcastReceiver);
 
         super.onStart();
     }
 
 
     @Override
-        protected void onResume () {
+    protected void onResume () {
         super.onResume();
 
-                // register GCM registration complete receiver
-                LocalBroadcastManager.getInstance(this).registerReceiver(mRegistrationBroadcastReceiver,
-                        new IntentFilter(Definitions.REGISTRATION_COMPLETE));
+        // register GCM registration complete receiver
+        LocalBroadcastManager.getInstance(this).registerReceiver(mRegistrationBroadcastReceiver,
+                new IntentFilter(Definitions.REGISTRATION_COMPLETE));
 
-                // register new push message receiver
-                // by doing this, the activity will be notified each time a new message arrives
-                LocalBroadcastManager.getInstance(this).registerReceiver(mRegistrationBroadcastReceiver,
-                        new IntentFilter(Definitions.PUSH_NOTIFICATION));
+        // register new push message receiver
+        // by doing this, the activity will be notified each time a new message arrives
+        LocalBroadcastManager.getInstance(this).registerReceiver(mRegistrationBroadcastReceiver,
+                new IntentFilter(Definitions.PUSH_NOTIFICATION));
 
-                // clear the notification area when the app is opened
+        // clear the notification area when the app is opened
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.cancelAll();
 
     }
 
-        @Override
-        protected void onPause () {
+    @Override
+    protected void onPause () {
 
-                LocalBroadcastManager.getInstance(this).unregisterReceiver(mRegistrationBroadcastReceiver);
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(mRegistrationBroadcastReceiver);
 
         super.onPause();
     }
@@ -377,71 +389,62 @@ public class LoginActivity extends AppCompatActivity implements Auth.OnAuthListe
     private void attemptLogin(String email,String password) {
 
 
-            objUsefullData.showProgress();
-            JSONObject request = new JSONObject();
-            JSONObject user_info = new JSONObject();
-            Log.e("-----token--",""+save_data.getString(Definitions.firebase_token));
-            try {
-                user_info.put("email", email);
-                user_info.put("password", password);
-                user_info.put("operating_system", "android");
-                user_info.put("token", save_data.getString(Definitions.firebase_token));
-                request.put("user", user_info);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+        objUsefullData.showProgress();
+        JSONObject request = new JSONObject();
+        JSONObject user_info = new JSONObject();
+        Log.e("-----token--",""+save_data.getString(Definitions.firebase_token));
+        try {
+            user_info.put("email", email);
+            user_info.put("password", password);
+            user_info.put("operating_system", "android");
+            user_info.put("token", save_data.getString(Definitions.firebase_token));
+            request.put("user", user_info);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
 
-            UserAPI.post_JsonReq_JsonResp("users/signin_api", request,
-                    new Response.Listener<JSONObject>() {
-                        @Override
-                        public void onResponse(JSONObject response) {
+        UserAPI.post_JsonReq_JsonResp("users/signin_api", request,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
 
 
-                                Log.e("-----response--",""+response);
-                            save_data.save(Definitions.facebook_login,false);
-                            store_values(response);
+                        Log.e("-----response--",""+response);
+                        save_data.save(Definitions.facebook_login,false);
+                        store_values(response);
 
 
 
-                        }
-                    }, new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            objUsefullData.dismissProgress();
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        objUsefullData.dismissProgress();
 
-                            NetworkResponse response = error.networkResponse;
-                            if (response != null && response.data != null) {
-                                switch (response.statusCode) {
+                        NetworkResponse response = error.networkResponse;
+                        if (response != null && response.data != null) {
+                            switch (response.statusCode) {
 
-                                    case 500:
+                                case 500:
 
-                                        objUsefullData.showMsgOnUI("Something went wrong");
-                                        break;
-                                    case 401:
+                                    objUsefullData.showMsgOnUI("Something went wrong");
+                                    break;
+                                case 401:
 
-                                        objUsefullData.showMsgOnUI("Invalid email address or password");
-                                        break;
-                                    case 406:
+                                    objUsefullData.showMsgOnUI("Invalid email address or password");
+                                    break;
+                                case 406:
 
-                                        objUsefullData.showMsgOnUI("Please confirm your account before Signing in");
-                                        break;
-                                }
+                                    objUsefullData.showMsgOnUI("Please confirm your account before Signing in");
+                                    break;
                             }
                         }
-                    });
+                    }
+                });
 
 
     }
-
-
-
-
-    /**
-     * Represents an asynchronous login/registration task used to authenticate
-     * the user.
-     */
-
 
 
     @Override
@@ -474,50 +477,55 @@ public class LoginActivity extends AppCompatActivity implements Auth.OnAuthListe
     private void saveAuthenticatedUser(SocialProfile profile){
         Log.e("data", ""+profile.getImage());
         objUsefullData.showProgress();
-        JSONObject request = new JSONObject();
-        JSONObject user_info = new JSONObject();
-        try {
-            user_info.put("name", profile.getName());
-            user_info.put("email", profile.getEmail());
-            user_info.put("role_id", "1");
-            user_info.put("token", save_data.getString(Definitions.firebase_token));
-            user_info.put("user_id", profile.getsocial_id());
-            user_info.put("image_url", profile.getImage());
-            user_info.put("operating_system", "android");
-            request.put("user", user_info);
-            Log.e("data", ""+request.toString());
-        } catch (JSONException e) {
-            e.printStackTrace();
+        if (save_data.isExist(Definitions.firebase_token)) {
+            JSONObject request = new JSONObject();
+            JSONObject user_info = new JSONObject();
+            try {
+                user_info.put("name", profile.getName());
+                user_info.put("email", profile.getEmail());
+                user_info.put("role_id", "1");
+                user_info.put("token", save_data.getString(Definitions.firebase_token));
+                user_info.put("user_id", profile.getsocial_id());
+                user_info.put("image_url", profile.getImage());
+                user_info.put("operating_system", "android");
+                request.put("user", user_info);
+                Log.e("data", ""+request.toString());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            UserAPI.post_JsonReq_JsonResp("/users/signin_facebook", request,
+                    new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+
+                            objUsefullData.dismissProgress();
+                            Log.e("-----response--",""+response);
+                            save_data.save(Definitions.facebook_login,true);
+
+                            objUsefullData.firebase_analytics("facebookLogin");
+
+                            store_values(response);
+
+
+
+                        }
+                    }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            objUsefullData.dismissProgress();
+                            objUsefullData.showMsgOnUI("Unsuccessful login");
+                            Log.e("-----response--",""+error);//
+                        }
+                    });
+        }else {
+            objUsefullData.make_toast(getResources().getString(R.string.wrong));
         }
-        UserAPI.post_JsonReq_JsonResp("/users/signin_facebook", request,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
 
-                        objUsefullData.dismissProgress();
-                        Log.e("-----response--",""+response);
-                        save_data.save(Definitions.facebook_login,true);
-
-                        objUsefullData.firebase_analytics("facebookLogin");
-
-                        store_values(response);
-
-                           
-
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        objUsefullData.dismissProgress();
-                        objUsefullData.showMsgOnUI("Unsuccessful login");
-                        Log.e("-----response--",""+error);//
-                    }
-                });
     }
     private void store_values(JSONObject response)
     {
         Log.e("response----",""+response);
-       try {
+        try {
 
             Log.e("response----",""+response.getString("name"));
             save_data.save(Definitions.user_name, response.optString("name"));
@@ -533,15 +541,17 @@ public class LoginActivity extends AppCompatActivity implements Auth.OnAuthListe
 
 
 
-            if(save_data.getBoolean(Definitions.show_child_form)==false){
+            if(!save_data.getBoolean(Definitions.show_child_form)){
                 Intent intent = new Intent(LoginActivity.this, Tab_activity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }else {
 
                 Intent intent = new Intent(LoginActivity.this, First_time_login.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
 
         } catch (Exception e) {

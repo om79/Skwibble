@@ -11,11 +11,9 @@ import com.skwibble.skwibblebook.utility.ClickableViewPager;
 
 public class Media_viewer extends AppCompatActivity {
 
-
     private ClickableViewPager vp_slider;
     private LinearLayout ll_dots;
     Media_viewer_adapter Adapter;
-
     Intent i;
     int index;
     @Override

@@ -280,12 +280,19 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize"/>
 
-        <service android:name=".media_upload.Background_update" />
+        <activity android:name=".user_group.WebView_link"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
+
+        <service android:name=".media_upload.Background_update"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
         <service
             android:name=".media_upload.Multi_post_service"
             android:enabled="true"
-            android:exported="true" />
-        <service android:name=".media_upload.Update_multi_post_service" />
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:name=".media_upload.Update_multi_post_service"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
 
 
 
@@ -320,22 +327,27 @@
         <!-- Firebase Notifications -->
         <service android:name=".firebase.MyFirebaseMessagingService">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.firebase.MESSAGING_EVENT"
+                    android:permission="android.permission.BIND_JOB_SERVICE"/>
             </intent-filter>
         </service>
         <service android:name=".firebase.MyFirebaseInstanceIDService">
             <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"
+                    android:permission="android.permission.BIND_JOB_SERVICE"/>
             </intent-filter>
         </service>
-        <service android:name=".firebase.NotificationListener" />
+        <service android:name=".firebase.NotificationListener"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
         <service
             android:name=".firebase.NotificationService"
             android:label="@string/app_name"
-            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" />
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
+            />
 
         <intent-filter>
-            <action android:name="android.service.notification.NotificationListenerService" />
+            <action android:name="android.service.notification.NotificationListenerService"
+                android:permission="android.permission.BIND_JOB_SERVICE"/>
         </intent-filter>
 
 

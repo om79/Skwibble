@@ -9,6 +9,7 @@ public class Definitions {
     // ====================================== Definitions ====================================== //
     public static final String user_name = "user_name" ;
     public static final String child_name = "child_name" ;
+    public static final String app_version = "android_v3" ;
     public static final String version = "application/json;version=3" ;
     public static final String user_image = "user_image" ;
     public static final String user_email = "user_email" ;
@@ -16,7 +17,7 @@ public class Definitions {
     public static final String user_dob = "user_dob" ;
     public static final String user_role_id = "user_role_id" ;
     public static final String id = "id" ;
-    public static final String firebase_token= "firebase_token" ;
+    public static final String firebase_token= "cmtnmUCBnxc:APA91bHjoHve09FvrZtJMbWB47m3WU2bo0Xd_6dt7eRbOQmewXqYI5gdoMaXY_RT6XiMFo0r9KJmhDvtOsL_Xv6KJ7arI33syH738q_J8luoFiIMAFNnGrRcleZ9ovhz8_nuU05i2Rqi" ;
     public static final String has_first_post = "first_post" ;
     public static final String show_child_form = "show_child_form" ;
     public static final String has_child = "has_child" ;
@@ -40,7 +41,6 @@ public class Definitions {
     public static final String current_journal_year  = "current_journal_year" ;
     public static final String current_event_msg  = "current_event_msg" ;
 
-
     public static final int REQUEST_CODE_MEDIA_SELECT = 200;
     public static final int REQUEST_CODE_MEDIA_CROP = 500;
     public static final String IMAGE_REQUEST  = "IMAGE_REQUEST" ;
@@ -57,11 +57,12 @@ public class Definitions {
     public static final String CURRENT_LIKE = "CURRENT_LIKE";
     public static final String CURRENT_COMMENT = "CURRENT_COMMENT";
     public static final String CURRENT_USER_LIKE = "CURRENT_USER_LIKE";
+    public static final String TERMS = "/terms?in_app=true";
 
 
-    public static final String APIdomain = "http://192.168.1.203:3000";//staging
-//  public static final String APIdomain = "http://139.59.186.196";//development
-//  public static final String APIdomain = "https://www.skwibble.com";//live
+//  public static final String APIdomain = "http://192.168.1.203:3000";//staging
+    public static final String APIdomain = "http://139.59.186.196";//development
+//    public static final String APIdomain = "https://www.skwibble.com";//live
 
 
     // ============================================ Others ============================================ //

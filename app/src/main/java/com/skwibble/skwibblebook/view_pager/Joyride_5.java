@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.skwibble.skwibblebook.R;
+import com.skwibble.skwibblebook.utility.Definitions;
 import com.skwibble.skwibblebook.utility.UsefullData;
 
 /**
@@ -57,7 +58,7 @@ public class Joyride_5 extends Fragment
             public void onClick(View v) {
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                i.setData(Uri.parse("https://skwibble.com/terms"));
+                i.setData(Uri.parse(Definitions.APIdomain+Definitions.TERMS));
                 getActivity().startActivity(i);
 
             }

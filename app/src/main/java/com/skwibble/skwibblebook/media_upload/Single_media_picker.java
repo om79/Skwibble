@@ -37,7 +37,7 @@ public class Single_media_picker extends Activity
         objUsefullData = new UsefullData(this);
         singlearrayMediaPath.clear();
         i=getIntent();
-        MediaSelectorActivity.startActivityForResult(this, Definitions.REQUEST_CODE_MEDIA_SELECT,
+        MediaSelectorActivity.startActivityForResult(this, Definitions.REQUEST_CODE_MEDIA_SELECT ,
                 MediaSelectorActivity.SELECTION_MODE_SINGLE, Definitions.SINGLE_MEDIA_COUNT, MediaSelectorActivity.MEDIA_TYPE_ALL,
                 true, true, singlearrayMediaPath);
 

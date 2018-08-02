@@ -1,11 +1,20 @@
 package com.skwibble.skwibblebook.user_group;
 
+import android.app.NotificationManager;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.TextPaint;
 import android.text.TextUtils;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -16,6 +25,8 @@ import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -23,6 +34,7 @@ import android.widget.TextView;
 import com.android.volley.NetworkResponse;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.skwibble.skwibblebook.R;
 import com.skwibble.skwibblebook.facebook.Auth;
 import com.skwibble.skwibblebook.facebook.FacebookAuth;
@@ -46,14 +58,17 @@ public class SignupActivity extends AppCompatActivity implements Auth.OnAuthList
 
 
 
-     EditText mEmailView;
-     EditText mname;
-     EditText mPasswordView;
-     UsefullData objUsefullData;
-     TextView login,or,fb_txt,txt_label;
-     FacebookAuth facebookAuth;
-     SaveData save_data;
-     LinearLayout fb;
+    EditText mEmailView;
+    EditText mname;
+    EditText mPasswordView;
+    UsefullData objUsefullData;
+    TextView login,or,fb_txt,txt_label;
+    FacebookAuth facebookAuth;
+    SaveData save_data;
+    LinearLayout fb;
+    private BroadcastReceiver mRegistrationBroadcastReceiver;
+    CheckBox terms;
+    TextView conditions_1,conditions_2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +82,11 @@ public class SignupActivity extends AppCompatActivity implements Auth.OnAuthList
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             window.setStatusBarColor(this.getResources().getColor(R.color.login_top));
         }
+        terms=(CheckBox) findViewById(R.id.terms_check);
+        conditions_1=(TextView) findViewById(R.id.conditions_1);
+        conditions_2=(TextView) findViewById(R.id.conditions_2);
+        conditions_1.setTypeface(objUsefullData.get_proxima_regusr());
+        conditions_2.setTypeface(objUsefullData.get_proxima_regusr());
         facebookAuth = new FacebookAuth(this ,this);
         mEmailView = (EditText) findViewById(R.id.editText_signup);
         mname = (EditText) findViewById(R.id.editText_name);
@@ -83,7 +103,7 @@ public class SignupActivity extends AppCompatActivity implements Auth.OnAuthList
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
                 if (id == R.id.email_sign_in_button || id == EditorInfo.IME_ACTION_DONE) {
 
-                    if(objUsefullData.isNetworkConnected()==true)
+                    if(objUsefullData.isNetworkConnected())
                     {
 
 
@@ -117,16 +137,12 @@ public class SignupActivity extends AppCompatActivity implements Auth.OnAuthList
                             mEmailView.setError(getString(R.string.error_field_required));
                             focusView = mEmailView;
                             cancel = true;
-                        } else if (objUsefullData.emailValidator(email)==false) {
+                        } else if (!objUsefullData.emailValidator(email)) {
                             mEmailView.setError(getString(R.string.error_invalid_email));
                             focusView = mEmailView;
                             cancel = true;
                         }
-
-
-
-
-                        if (cancel==true) {
+                        if (cancel) {
                             // There was an error; don't attempt login and focus the first
                             // form field with an error.
                             focusView.requestFocus();
@@ -142,7 +158,7 @@ public class SignupActivity extends AppCompatActivity implements Auth.OnAuthList
                                     mname.setSelection(mname.getText().length());
                                 }
                             }
-                                attemptsignup(mname.getText().toString(), mEmailView.getText().toString(), mPasswordView.getText().toString());
+                            attemptsignup(mname.getText().toString(), mEmailView.getText().toString(), mPasswordView.getText().toString());
 
                         }
                     }else {
@@ -154,12 +170,12 @@ public class SignupActivity extends AppCompatActivity implements Auth.OnAuthList
             }
         });
         mPasswordView.setTypeface(objUsefullData.get_proxima_regusr());
-        Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_up_button);
+        final Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_up_button);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if(objUsefullData.isNetworkConnected()==true)
+                if(objUsefullData.isNetworkConnected())
                 {
                     objUsefullData.hideKeyboardFrom(getApplicationContext(),view);
 
@@ -201,7 +217,7 @@ public class SignupActivity extends AppCompatActivity implements Auth.OnAuthList
 
 
 
-                    if (cancel==true) {
+                    if (cancel) {
                         // There was an error; don't attempt login and focus the first
                         // form field with an error.
                         focusView.requestFocus();
@@ -232,9 +248,10 @@ public class SignupActivity extends AppCompatActivity implements Auth.OnAuthList
         login.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
+//                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                startActivity(intent);
+                finish();
             }
         });
         login.setTypeface(objUsefullData.get_proxima_regusr());
@@ -250,6 +267,70 @@ public class SignupActivity extends AppCompatActivity implements Auth.OnAuthList
             }
         });
 
+
+        mRegistrationBroadcastReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+
+                // checking for type intent filter
+                if (intent.getAction().equals(Definitions.REGISTRATION_COMPLETE)) {
+                    // gcm successfully registered
+                    // now subscribe to `global` topic to receive app wide notifications
+                    FirebaseMessaging.getInstance().subscribeToTopic(Definitions.TOPIC_GLOBAL);
+
+
+
+                } else if (intent.getAction().equals(Definitions.PUSH_NOTIFICATION)) {
+                    // new push notification is received
+
+                    String message = intent.getStringExtra("message");
+
+
+
+
+                }
+            }
+        };
+
+
+        mEmailSignInButton.setEnabled(false);
+        mEmailSignInButton.setAlpha(.4f);
+        terms.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+                                             @Override
+                                             public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+
+                                                 if(isChecked){
+                                                     mEmailSignInButton.setEnabled(true);
+                                                     mEmailSignInButton.setAlpha(1f);
+                                                 }else {
+                                                     mEmailSignInButton.setEnabled(false);
+                                                     mEmailSignInButton.setAlpha(.3f);
+                                                 }
+
+                                             }
+                                         }
+        );
+
+        SpannableString spannableString = new SpannableString(getString(R.string.term_nd_condition_2));
+        ClickableSpan clickableSpan = new ClickableSpan() {
+            @Override
+            public void onClick(View textView) {
+                Intent forgot=new Intent(SignupActivity.this,WebView_link.class);
+                startActivity(forgot);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            }
+            @Override
+            public void updateDrawState(final TextPaint textPaint) {
+                textPaint.setColor(getResources().getColor(R.color.orange));
+                textPaint.setUnderlineText(true);
+            }
+        };
+        spannableString.setSpan(clickableSpan, 0,
+                spannableString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        conditions_2.setText(spannableString, TextView.BufferType.SPANNABLE);
+        conditions_2.setMovementMethod(LinkMovementMethod.getInstance());
+
     }
 
 
@@ -257,73 +338,74 @@ public class SignupActivity extends AppCompatActivity implements Auth.OnAuthList
 
 
 
-            objUsefullData.showProgress();
-            JSONObject request = new JSONObject();
-            JSONObject user_info = new JSONObject();
+        objUsefullData.showProgress();
+        JSONObject request = new JSONObject();
+        JSONObject user_info = new JSONObject();
 
-            try {
-                user_info.put("name", name);
-                user_info.put("email", email);
-                user_info.put("role_id", "1");
-                user_info.put("password", password);
-                user_info.put("password_confirmation", password);
-                request.put("user", user_info);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-
-            UserAPI.post_JsonReq_JsonResp("/users", request,
-                    new Response.Listener<JSONObject>() {
-                        @Override
-                        public void onResponse(JSONObject response) {
-
-                            objUsefullData.dismissProgress();
-                            Log.e("-----response--",""+response);
+        try {
+            user_info.put("name", name);
+            user_info.put("email", email);
+            user_info.put("role_id", "1");
+            user_info.put("password", password);
+            user_info.put("password_confirmation", password);
+            request.put("user", user_info);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
 
-                            new SweetAlertDialog(SignupActivity.this, SweetAlertDialog.SUCCESS_TYPE)
-                                    .setTitleText("Almost There...")
-                                    .setContentText("Please activate your account by following the confirmation link sent to your email address.")
-                                    .setConfirmText("Got it!")
-                                    .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                                        @Override
-                                        public void onClick(SweetAlertDialog sDialog) {
-                                            sDialog.dismissWithAnimation();
-                                            Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
-                                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                            startActivity(intent);
-                                        }
-                                    })
-                                    .show();
+        UserAPI.post_JsonReq_JsonResp("/users", request,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+
+                        objUsefullData.dismissProgress();
+                        Log.e("-----response--",""+response);
 
 
-                        }
-                    }, new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            objUsefullData.dismissProgress();
+                        new SweetAlertDialog(SignupActivity.this, SweetAlertDialog.SUCCESS_TYPE)
+                                .setTitleText("Almost There...")
+                                .setContentText("Please activate your account by following the confirmation link sent to your email address.")
+                                .setConfirmText("Got it!")
+                                .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                    @Override
+                                    public void onClick(SweetAlertDialog sDialog) {
+                                        sDialog.dismissWithAnimation();
+                                        Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                        startActivity(intent);
+                                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                                    }
+                                })
+                                .show();
 
 
-                            NetworkResponse response = error.networkResponse;
-                            if (response != null && response.data != null) {
-                                switch (response.statusCode) {
-                                    case 422:
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        objUsefullData.dismissProgress();
 
-                                        objUsefullData.showMsgOnUI("Email address already exists");
+
+                        NetworkResponse response = error.networkResponse;
+                        if (response != null && response.data != null) {
+                            switch (response.statusCode) {
+                                case 422:
+
+                                    objUsefullData.showMsgOnUI("Email address already exists");
 
 
-                                        break;
-                                    case 500:
+                                    break;
+                                case 500:
 
-                                        objUsefullData.showMsgOnUI("Something went wrong");
-                                        break;
+                                    objUsefullData.showMsgOnUI("Something went wrong");
+                                    break;
 
-                                }
                             }
-
                         }
-                    });
+
+                    }
+                });
 
 
     }
@@ -374,44 +456,49 @@ public class SignupActivity extends AppCompatActivity implements Auth.OnAuthList
         Log.e("data", ""+profile.getsocial_id());
 
         Log.e("data", ""+profile.getImage());
-        JSONObject request = new JSONObject();
-        JSONObject user_info = new JSONObject();
-        try {
-            user_info.put("name", profile.getName());
-            user_info.put("email", profile.getEmail());
-            user_info.put("role_id", "1");
-            user_info.put("token", save_data.getString(Definitions.firebase_token));
-            user_info.put("user_id", profile.getsocial_id());
-            user_info.put("image_url", profile.getImage());
-            user_info.put("operating_system", "android");
-            request.put("user", user_info);
-        } catch (JSONException e) {
-            e.printStackTrace();
+
+        if (save_data.isExist(Definitions.firebase_token)) {
+            JSONObject request = new JSONObject();
+            JSONObject user_info = new JSONObject();
+            try {
+                user_info.put("name", profile.getName());
+                user_info.put("email", profile.getEmail());
+                user_info.put("role_id", "1");
+                user_info.put("token", save_data.getString(Definitions.firebase_token));
+                user_info.put("user_id", profile.getsocial_id());
+                user_info.put("image_url", profile.getImage());
+                user_info.put("operating_system", "android");
+                request.put("user", user_info);
+                Log.e("data", ""+request.toString());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+
+            UserAPI.post_JsonReq_JsonResp("/users/signin_facebook", request,
+                    new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+
+                            objUsefullData.dismissProgress();
+                            objUsefullData.firebase_analytics("facebookLogin");
+                            Log.e("-----response--",""+response);
+                            save_data.save(Definitions.facebook_login,true);
+                            store_values(response);
+
+                        }
+                    }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            objUsefullData.dismissProgress();
+                            objUsefullData.showMsgOnUI("Unsuccessful Signup");
+                            Log.e("-----response--",""+error);
+                        }
+                    });
+        }else {
+            objUsefullData.make_toast(getResources().getString(R.string.wrong));
         }
 
-
-        UserAPI.post_JsonReq_JsonResp("/users/signin_facebook", request,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-
-                        objUsefullData.dismissProgress();
-                        objUsefullData.firebase_analytics("facebookLogin");
-                        Log.e("-----response--",""+response);
-                        save_data.save(Definitions.facebook_login,true);
-                        store_values(response);
-
-
-
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        objUsefullData.dismissProgress();
-                        objUsefullData.showMsgOnUI("Unsuccessful Signup");
-                        Log.e("-----response--",""+error);
-                    }
-                });
 
     }
 
@@ -433,15 +520,17 @@ public class SignupActivity extends AppCompatActivity implements Auth.OnAuthList
             save_data.save(Definitions.has_child, response.optBoolean("has_child"));
             save_data.save(Definitions.show_child_form, response.optBoolean("show_child_form"));
 
-            if(save_data.getBoolean(Definitions.show_child_form)==false){
+            if(!save_data.getBoolean(Definitions.show_child_form)){
                 Intent intent = new Intent(SignupActivity.this, Tab_activity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }else {
 
                 Intent intent = new Intent(SignupActivity.this, First_time_login.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -465,6 +554,43 @@ public class SignupActivity extends AppCompatActivity implements Auth.OnAuthList
                 ((InputMethodManager)this.getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow((this.getWindow().getDecorView().getApplicationWindowToken()), 0);
         }
         return super.dispatchTouchEvent(ev);
+    }
+
+    @Override
+    protected void onStart() {
+
+
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(mRegistrationBroadcastReceiver);
+
+        super.onStart();
+    }
+
+
+    @Override
+    protected void onResume () {
+        super.onResume();
+
+        // register GCM registration complete receiver
+        LocalBroadcastManager.getInstance(this).registerReceiver(mRegistrationBroadcastReceiver,
+                new IntentFilter(Definitions.REGISTRATION_COMPLETE));
+
+        // register new push message receiver
+        // by doing this, the activity will be notified each time a new message arrives
+        LocalBroadcastManager.getInstance(this).registerReceiver(mRegistrationBroadcastReceiver,
+                new IntentFilter(Definitions.PUSH_NOTIFICATION));
+
+        // clear the notification area when the app is opened
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.cancelAll();
+
+    }
+
+    @Override
+    protected void onPause () {
+
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(mRegistrationBroadcastReceiver);
+
+        super.onPause();
     }
 }
 

@@ -140,7 +140,7 @@ public class Add_budddies extends AppCompatActivity {
     private void add_buddeis(String code,String name)
     {
 
-        if(objUsefullData.isNetworkConnected()==false)
+        if(!objUsefullData.isNetworkConnected())
         {
             objUsefullData.showMsgOnUI("Please check your internet connection and try again");
         }

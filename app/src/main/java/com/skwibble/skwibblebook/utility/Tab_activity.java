@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
@@ -58,6 +59,7 @@ public class Tab_activity extends TabActivity {
         if(!save_data.isExist(Definitions.auth_token)){
             Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
             startActivity(intent);
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             finish();
         }
         setContentView(R.layout.tab_activity);
@@ -114,6 +116,11 @@ public class Tab_activity extends TabActivity {
 
         }
 
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+//            this.startForegroundService(new Intent(Tab_activity.this, NotificationListener.class));
+//        } else {
+//            this.startService(new Intent(Tab_activity.this, NotificationListener.class));
+//        }
         startService(new Intent(Tab_activity.this, NotificationListener.class));
         LocalBroadcastManager.getInstance(this).registerReceiver(onNotice, new IntentFilter("Msg"));
 
@@ -310,10 +317,14 @@ public class Tab_activity extends TabActivity {
                         break;
                     case "Story_post_details":
 
+                        if(playpen_id!=null){
                         if(playpen_id.equals("88888888"))
                         {
                             save_data.save(Definitions.current_noti_request,"Feed_post_details");
                             setTabs(3,firebase);
+                        }else {
+                            setTabs(0, firebase);
+                        }
                         }else {
                             setTabs(0, firebase);
                         }
@@ -382,7 +393,6 @@ public class Tab_activity extends TabActivity {
                 }
             }
         }
-
     }
 
     private BroadcastReceiver onNotice= new BroadcastReceiver() {

@@ -16,12 +16,9 @@
         <item name="android:windowBackground">@mipmap/add_child_back</item>
         <item name="android:statusBarColor">@color/theme_color_primary</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-
         <item name="android:windowDisablePreview">true</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowIsTranslucent">false</item>
-
-
 
     </style>
 
@@ -147,6 +144,11 @@
     <style name="SelectableItemBackground">
         <item name="android:theme">@style/SelectableItemTheme</item>
         <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="checkBoxStyle" parent="Base.Theme.AppCompat">
+        <item name="colorAccent">@color/orange</item>
+        <item name="android:textColorSecondary">@color/orange</item>
     </style>
 
 </resources>

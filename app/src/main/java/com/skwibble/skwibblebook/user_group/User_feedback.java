@@ -125,7 +125,7 @@ public class User_feedback extends Activity {
     private void logout()
     {
 
-        if(objUsefullData.isNetworkConnected()==false)
+        if(!objUsefullData.isNetworkConnected())
         {
             objUsefullData.showMsgOnUI("Please check your internet connection and try again");
         }

@@ -68,7 +68,8 @@ public class Background_update extends IntentService {
 
         JSONObject user = new JSONObject();
         try {
-            user.put("version", "android_v3");
+            user.put("version", Definitions.app_version);
+            user.put("token", save_data.getString(Definitions.firebase_token));
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -98,9 +99,10 @@ public class Background_update extends IntentService {
 
         JSONObject user = new JSONObject();
         try {
-            user.put("token", save_data.get(Definitions.firebase_token));
+            user.put("token", save_data.getString(Definitions.firebase_token));
             user.put("is_in_app", is_in_app);
-            user.put("version", "android_v3");
+            user.put("version", Definitions.app_version);
+
 
         } catch (JSONException e) {
             e.printStackTrace();

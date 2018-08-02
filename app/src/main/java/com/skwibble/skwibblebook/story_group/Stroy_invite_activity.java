@@ -169,7 +169,7 @@ public class Stroy_invite_activity extends AppCompatActivity {
 
             if (extras.containsKey("story_invite_noti_id")) {
 
-                url="/story_posts_buddy/"+extras.getString("story_invite_noti_id");
+                url="/story_posts_buddy/?child_id="+extras.getString("story_invite_noti_id");
 
             }
         }

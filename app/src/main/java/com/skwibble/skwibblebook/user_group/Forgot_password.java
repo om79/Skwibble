@@ -52,7 +52,7 @@ public class Forgot_password extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(objUsefullData.isNetworkConnected()==true)
+                if(objUsefullData.isNetworkConnected())
                 {
                     objUsefullData.hideKeyboardFrom(getApplicationContext(),view);
 

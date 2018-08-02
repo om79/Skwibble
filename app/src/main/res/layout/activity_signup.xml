@@ -62,6 +62,7 @@
                     android:id="@+id/editText_name"
                     android:layout_weight="1" />
             </LinearLayout>
+
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
@@ -126,6 +127,47 @@
                     android:background="@drawable/edit_text_back"
                     android:id="@+id/editText2_sighup"
                     android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center|left"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/checkBoxStyle"
+                    android:id="@+id/terms_check"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center|left">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="13dp"
+                        android:id="@+id/conditions_1"
+                        android:text="@string/term_nd_condition_1"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" "/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/orange"
+                        android:id="@+id/conditions_2"
+                        android:textSize="13dp"
+                        android:text="@string/term_nd_condition_2"/>
+                </LinearLayout>
+
             </LinearLayout>
 
             <RelativeLayout

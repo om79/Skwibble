@@ -74,5 +74,8 @@
     <dimen name="fab_elevation">5dp</dimen>
     <dimen name="fab_rise">3dp</dimen>
     <string name="data">{"address": \"yo test\"}</string>
-
+    <string name="wrong">Something went wrong</string>
+    <string name="term_nd_condition_1">I accept the </string>
+    <string name="term_nd_condition_2">Terms &amp; Conditions</string>
+    <string name="text_tc_small">terms &amp; conditions </string>
 </resources>

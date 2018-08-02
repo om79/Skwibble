@@ -71,7 +71,6 @@ public class Post_to_skwibble extends Activity {
     SaveData save_data;
     HashMap<String, String> map_post_type = new HashMap<String, String>();
     HashMap<String, String> map_privacy = new HashMap<String, String>();
-
     String request;
     TextView post, title_txt;
     EditText content;
@@ -86,7 +85,6 @@ public class Post_to_skwibble extends Activity {
     public static ArrayList<Actors> slider_image_list = new ArrayList<Actors>();
     ArrayList<String> trimmer_list = new ArrayList<String>();
     List<String> deletion_image_list = new ArrayList<String>();
-
     public  ArrayList<String> arrayMediaPath = new ArrayList<>();
     public static ArrayList<String> trimmer_done_list = new ArrayList<String>();
 
@@ -97,7 +95,6 @@ public class Post_to_skwibble extends Activity {
 
         objUsefullData = new UsefullData(Post_to_skwibble.this);
         save_data = new SaveData(Post_to_skwibble.this);
-
         slider_image_list.clear();
         deletion_image_list.clear();
         arrayMediaPath.clear();
@@ -333,6 +330,20 @@ public class Post_to_skwibble extends Activity {
 
         }else {
 
+            if(post_type.getText().toString().trim().equals("Milestone")){
+                objUsefullData.firebase_analytics("postMilestone");
+            }else if(post_type.getText().toString().trim().equals("Story")){
+                objUsefullData.firebase_analytics("postStory");
+            }else if(post_type.getText().toString().trim().equals("Celebration")){
+                objUsefullData.firebase_analytics("postCelebration");
+            }
+
+            if(privacy.getText().toString().trim().equals("Only Me")){
+                objUsefullData.firebase_analytics("postMe");
+            }else if(privacy.getText().toString().trim().equals("Everyone")){
+                objUsefullData.firebase_analytics("postEveryone");
+
+            }
             Intent intent = new Intent(this, Multi_post_service.class);
             intent.putExtra("content", content.getText().toString().trim());
             intent.putExtra("date", date.getText().toString().trim());
@@ -738,6 +749,21 @@ public class Post_to_skwibble extends Activity {
         if (!objUsefullData.isNetworkConnected()) {
             objUsefullData.showMsgOnUI("Please check your internet connection and try again");
         } else {
+
+            if(post_type.getText().toString().trim().equals("Milestone")){
+                objUsefullData.firebase_analytics("postMilestone");
+            }else if(post_type.getText().toString().trim().equals("Story")){
+                objUsefullData.firebase_analytics("postStory");
+            }else if(post_type.getText().toString().trim().equals("Celebration")){
+                objUsefullData.firebase_analytics("postCelebration");
+            }
+
+            if(privacy.getText().toString().trim().equals("Only Me")){
+                objUsefullData.firebase_analytics("postMe");
+            }else if(privacy.getText().toString().trim().equals("Everyone")){
+                objUsefullData.firebase_analytics("postEveryone");
+
+            }
             Intent i = new Intent(Post_to_skwibble.this, Update_multi_post_service.class);
             i.putExtra("content", content.getText().toString().trim());
             i.putExtra("date", date.getText().toString().trim());

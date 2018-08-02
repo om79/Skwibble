@@ -34,11 +34,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-;
 
 public class Journal_activitry extends AppCompatActivity {
 
@@ -55,6 +54,7 @@ public class Journal_activitry extends AppCompatActivity {
     ImageView rotate_view;
     boolean refresh=false;
     int start_call=0;
+    int year;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,7 +90,7 @@ public class Journal_activitry extends AppCompatActivity {
         not_child_txt.setTypeface(objUsefullData.get_proxima_regusr());
         not_found_txt.setTypeface(objUsefullData.get_proxima_regusr());
         gv=(GridView)findViewById(R.id.lvuxsadsdser);
-
+        year = Calendar.getInstance().get(Calendar.YEAR);
         adapter = new Journal_adapter(getParent(), R.layout.row_journal, actorsList);
 
         gv.setAdapter(adapter);
@@ -111,7 +111,8 @@ public class Journal_activitry extends AppCompatActivity {
             gv.setVisibility(View.VISIBLE);
             if(!save_data.isExist(Definitions.current_journal_year))
             {
-                get_journal(true,"2017");
+
+                get_journal(true,""+year);
 
             }else {
                 get_journal(false,save_data.getString(Definitions.current_journal_year));
@@ -239,7 +240,7 @@ public class Journal_activitry extends AppCompatActivity {
         if(!objUsefullData.isNetworkConnected())
         {
             objUsefullData.showMsgOnUI("Please check your internet connection and try again");
-            save_data.save(Definitions.current_journal_year,"2017");
+            save_data.save(Definitions.current_journal_year,""+year);
             if(actorsList.size()==0){
                 not_found.setVisibility(View.GONE);
                 gv.setVisibility(View.GONE);
@@ -389,7 +390,7 @@ public class Journal_activitry extends AppCompatActivity {
 
                 if(!save_data.isExist(Definitions.current_journal_year))
                 {
-                    get_journal(true,"2017");
+                    get_journal(true,""+year);
 
                 }else {
                     get_journal(false,save_data.getString(Definitions.current_journal_year));
